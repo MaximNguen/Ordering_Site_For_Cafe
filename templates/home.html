@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'style.css' %}"> 
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="header-container-left">
+                <a href="{% url 'main:index' %}" class="logo-link-header">Home</a>
+                <p class="header-phone"><a href="tel:+71234567890" class="phone-link">
+                    +7 (123) 456-78-90
+                  </a></p>
+            </div>
+            <div class="header-container-right">
+                {% if user.is_authenticated %}
+                    <a href="#" class="button-header-logout">Выход</a>
+                {% else %}
+                    <a href="#" class="button-header-login">Вход</a>
+                    <a href="#" class="button-header-cart">Корзина</a>
+                {% endif %}
+            </div>
+
+        </div>
+    </header>
+    <nav>
+        <div class="header-buttons">
+            <div class="all-buttons">
+                <a href="#" class="button-promotions">Акция</a>
+                <a href="#" class="button-menu">Меню</a>
+                <a href="#" class="button-vacancy">Вакансии</a>
+            </div>
+        </div>
+    </nav>
+    <div class="video-presentation-section">
+        <video autoplay muted loop>
+            <source src="{% static 'logoVideo.mp4' %}" type="video/mp4">
+        </video>
+        <div class="logo-on-video">
+            <img src="{% static 'logo.png' %}" alt="Логотип">
+        </div>
+    </div>
+    <main class="main-section">
+        <section class="menu-section">
+            <div class="menu-section-word">
+                <p><b>Меню</b></p>
+            </div>
+        </section>
+        <section class="menu-items">
+        <div class="menu-cards-row">
+            <a href="#" class="menu-card">
+                <img src="{% static 'menu/soups.png'%}"  alt="Супы" class="menu-card-image">
+                <span class="menu-card-title">Супы</span>
+            </a>
+            <a href="#" class="menu-card">
+                <img src="{% static 'menu/second.png'%}"  alt="Вторые блюда" class="menu-card-image">
+                <span class="menu-card-title">Вторые</span>
+            </a>
+            <a href="#" class="menu-card">
+                <img src="{% static 'menu/snacks.png'%}"  alt="Закуски" class="menu-card-image">
+                <span class="menu-card-title">Закуски</span>
+            </a>
+            <a href="#" class="menu-card">
+                <img src="{% static 'menu/drinks.png'%}"  alt="Напитки" class="menu-card-image">
+                <span class="menu-card-title">Напитки</span>
+            </a>
+        </div>
+        </section>
+        <section class="promotions-section">
+            <div class="promotions-section-word">
+                <p><b>Акция</b></p>
+            </div>
+        </section>
+        <section class="promotions-items">
+            <div class="promotions-cards-row">
+                <a href="#" class="promotion-card">
+                    <img src="{% static 'promotions/promo1.png' %}" alt="Акция 1" class="promotion-card-image">
+                    <span class="promotion-card-description">-20%</span>
+                    <span class="promotion-card-title">Скидка на все супы</span>
+                </a>
+                <a href="#" class="promotion-card">
+                    <img src="{% static 'promotions/promo2.png' %}" alt="Акция 2" class="promotion-card-image">
+                    <span class="promotion-card-description">2+1</span>
+                    <span class="promotion-card-title">Третий напиток бесплатно</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3 class="footer-title">О нас</h3>
+                <p class="footer-text">Добро пожаловать в наше уютное кафе! Мы предлагаем вкусную еду, приятную атмосферу и отличный сервис.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-title">Контакты</h3>
+                <div class="footer-contact">
+                    <p><i class="footer-icon">📞</i> +7 (123) 456-78-90</p>
+                    <p><i class="footer-icon">📧</i> info@cafe.ru</p>
+                    <p><i class="footer-icon">📍</i> ул. Московское шоссе, 123</p>
+                    <p><i class="footer-icon">🕒</i> Пн-Вс: 9:00 - 23:00</p>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-title">Меню</h3>
+                <ul class="footer-menu">
+                    <li><a href="#" class="footer-link">Супы</a></li>
+                    <li><a href="#" class="footer-link">Вторые блюда</a></li>
+                    <li><a href="#" class="footer-link">Закуски</a></li>
+                    <li><a href="#" class="footer-link">Напитки</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-title">Социальные сети</h3>
+                <div class="footer-social">
+                    <a href="#" class="social-link">📱 Telegram</a>
+                    <a href="#" class="social-link">📘 VK</a>
+                    <a href="#" class="social-link">📷 Instagram</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Кафе. Все права защищены.</p>
+        </div>
+    </footer>
+    
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
