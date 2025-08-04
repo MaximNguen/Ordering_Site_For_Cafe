@@ -16,7 +16,8 @@
             </div>
             <div class="header-container-right">
                 {% if user.is_authenticated %}
-                    <a href="#" class="button-header-logout">Выход</a>
+                    <a href="#" class="button-header-login">Профиль</a>
+                    <a href="#" class="button-header-cart">Корзина</a>
                 {% else %}
                     <a href="#" class="button-header-login">Вход</a>
                     <a href="#" class="button-header-cart">Корзина</a>
@@ -50,22 +51,16 @@
         </section>
         <section class="menu-items">
         <div class="menu-cards-row">
+            {% if menu%}
+            {%for item in menu%}
             <a href="#" class="menu-card">
-                <img src="{% static 'menu/soups.png'%}"  alt="Супы" class="menu-card-image">
-                <span class="menu-card-title">Супы</span>
+                <img src="{{ item.image.url}}"  alt={{item.name}} class="menu-card-image">
+                <span class="menu-card-title">{{item.name}}</span>
             </a>
-            <a href="#" class="menu-card">
-                <img src="{% static 'menu/second.png'%}"  alt="Вторые блюда" class="menu-card-image">
-                <span class="menu-card-title">Вторые</span>
-            </a>
-            <a href="#" class="menu-card">
-                <img src="{% static 'menu/snacks.png'%}"  alt="Закуски" class="menu-card-image">
-                <span class="menu-card-title">Закуски</span>
-            </a>
-            <a href="#" class="menu-card">
-                <img src="{% static 'menu/drinks.png'%}"  alt="Напитки" class="menu-card-image">
-                <span class="menu-card-title">Напитки</span>
-            </a>
+            {%endfor%}
+            {%else%}
+            <p>Не найдены категории меню</p>
+            {%endif%}
         </div>
         </section>
         <section class="promotions-section">
@@ -75,16 +70,17 @@
         </section>
         <section class="promotions-items">
             <div class="promotions-cards-row">
+                {% if promotions%}
+                {%for promo in promotions%}
                 <a href="#" class="promotion-card">
-                    <img src="{% static 'promotions/promo1.png' %}" alt="Акция 1" class="promotion-card-image">
-                    <span class="promotion-card-description">-20%</span>
-                    <span class="promotion-card-title">Скидка на все супы</span>
+                    <img src="{{ promo.image.url }}" alt="Акция 1" class="promotion-card-image">
+                    <span class="promotion-card-description">{{ promo.redText }}</span>
+                    <span class="promotion-card-title">{{ promo.name }}</span>
                 </a>
-                <a href="#" class="promotion-card">
-                    <img src="{% static 'promotions/promo2.png' %}" alt="Акция 2" class="promotion-card-image">
-                    <span class="promotion-card-description">2+1</span>
-                    <span class="promotion-card-title">Третий напиток бесплатно</span>
-                </a>
+                {% endfor %}
+                {% else %}
+                <p>На данный момент у нас не акции :(</p>
+                {% endif %}
             </div>
         </section>
 
