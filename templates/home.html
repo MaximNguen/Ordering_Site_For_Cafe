@@ -1,40 +1,6 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="{% static 'style.css' %}"> 
-    <title>{% block title %} {% endblock %}</title>
-</head>
-<body>
-    <header>
-        <div class="header-container">
-            <div class="header-container-left">
-                <a href="{% url 'main:index' %}" class="logo-link-header">Home</a>
-                <p class="header-phone"><a href="tel:+71234567890" class="phone-link">
-                    +7 (123) 456-78-90
-                  </a></p>
-            </div>
-            <div class="header-container-right">
-                {% if user.is_authenticated %}
-                    <a href="#" class="button-header-login">Профиль</a>
-                    <a href="#" class="button-header-cart">Корзина</a>
-                {% else %}
-                    <a href="#" class="button-header-login">Вход</a>
-                    <a href="#" class="button-header-cart">Корзина</a>
-                {% endif %}
-            </div>
-
-        </div>
-    </header>
-    <nav>
-        <div class="header-buttons">
-            <div class="all-buttons">
-                <a href="#" class="button-promotions">Акция</a>
-                <a href="#" class="button-menu">Меню</a>
-                <a href="#" class="button-vacancy">Вакансии</a>
-            </div>
-        </div>
-    </nav>
+    {% block content %}
     <div class="video-presentation-section">
         <video autoplay muted loop>
             <source src="{% static 'logoVideo.mp4' %}" type="video/mp4">
@@ -44,7 +10,8 @@
         </div>
     </div>
     <main class="main-section">
-        <section class="menu-section">
+
+    <section class="menu-section">
             <div class="menu-section-word">
                 <p><b>Меню</b></p>
             </div>
@@ -53,7 +20,7 @@
         <div class="menu-cards-row">
             {% if menu%}
             {%for item in menu%}
-            <a href="#" class="menu-card">
+            <a href="{% url 'products:category' item.slug %}" class="menu-card">
                 <img src="{{ item.image.url}}"  alt={{item.name}} class="menu-card-image">
                 <span class="menu-card-title">{{item.name}}</span>
             </a>
@@ -63,7 +30,7 @@
             {%endif%}
         </div>
         </section>
-        <section class="promotions-section">
+        <section class="promotions-section" id="promotions">
             <div class="promotions-section-word">
                 <p><b>Акция</b></p>
             </div>
@@ -83,52 +50,17 @@
                 {% endif %}
             </div>
         </section>
-
+        <div class="map_place">
+            <h3 style="margin-top: 40px; text-align: center;">Где нас найти?</h3>
+            <div style="position:relative;overflow:hidden;width:100%;height:400px;border-radius:16px;box-shadow:0 4px 16px rgba(0,0,0,0.1);">
+                <a href="https://yandex.ru/maps/org/hanoi/97574318406/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Hanoi</a>
+                <a href="https://yandex.ru/maps/195/ulyanovsk/category/fast_food/184106386/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Быстрое питание в Ульяновске</a>
+                <a href="https://yandex.ru/maps/195/ulyanovsk/category/restaurant/184106394/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:28px;">Ресторан в Ульяновске</a>
+                <iframe src="https://yandex.ru/map-widget/v1/org/hanoi/97574318406/?ll=48.361892%2C54.306666&z=16" width="100%" height="100%" frameborder="0" allowfullscreen="true" style="position:relative;border-radius:16px;"></iframe>
+            </div>
+        </div>
     </main>
     
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3 class="footer-title">О нас</h3>
-                <p class="footer-text">Добро пожаловать в наше уютное кафе! Мы предлагаем вкусную еду, приятную атмосферу и отличный сервис.</p>
-            </div>
-            
-            <div class="footer-section">
-                <h3 class="footer-title">Контакты</h3>
-                <div class="footer-contact">
-                    <p><i class="footer-icon">📞</i> +7 (123) 456-78-90</p>
-                    <p><i class="footer-icon">📧</i> info@cafe.ru</p>
-                    <p><i class="footer-icon">📍</i> ул. Московское шоссе, 123</p>
-                    <p><i class="footer-icon">🕒</i> Пн-Вс: 9:00 - 23:00</p>
-                </div>
-            </div>
-            
-            <div class="footer-section">
-                <h3 class="footer-title">Меню</h3>
-                <ul class="footer-menu">
-                    <li><a href="#" class="footer-link">Супы</a></li>
-                    <li><a href="#" class="footer-link">Вторые блюда</a></li>
-                    <li><a href="#" class="footer-link">Закуски</a></li>
-                    <li><a href="#" class="footer-link">Напитки</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3 class="footer-title">Социальные сети</h3>
-                <div class="footer-social">
-                    <a href="#" class="social-link">📱 Telegram</a>
-                    <a href="#" class="social-link">📘 VK</a>
-                    <a href="#" class="social-link">📷 Instagram</a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2024 Кафе. Все права защищены.</p>
-        </div>
-    </footer>
-    
-    {% block content %}
     {% endblock %}
 </body>
 </html>

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<main class="main-section">
+    <section class="menu-section">
+            <div class="menu-section-word">
+                <p><b>Меню</b></p>
+            </div>
+
+    </section>
+
+    <section class="menu-items">
+        <div class="menu-cards-row">
+            {% if menu%}
+            {%for item in menu%}
+            <a href="{% url 'products:category' item.slug %}" class="menu-card">
+                <img src="{{ item.image.url}}"  alt={{item.name}} class="menu-card-image">
+                
+                <span class="menu-card-title">{{item.name}}</span>
+            </a>
+            {%endfor%}
+            {%else%}
+            <p>Не найдены категории меню</p>
+            {%endif%}
+        </div>
+        </section>
+        </main>
+{% endblock %}
