@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="header-container-left">
+                <a href="{% url 'main:index' %}" class="logo-link-header">Home</a>
+                <p class="header-phone"><a href="tel:+71234567890" class="phone-link">
+                    +7 (123) 456-78-90
+                  </a></p>
+            </div>
+            <div class="header-container-right">
+                {% if user.is_authenticated %}
+                    <a href="#" class="button-header-login">Профиль</a>
+                    <a href="#" class="button-header-cart">Корзина</a>
+                {% else %}
+                    <a href="#" class="button-header-login">Вход</a>
+                    <a href="#" class="button-header-cart">Корзина</a>
+                {% endif %}
+            </div>
+
+        </div>
+    </header>
+    <nav>
+        <div class="header-buttons">
+            <div class="all-buttons">
+                <a href="{% url 'main:index' %}" class="button-index">Главная</a>
+                <a href="{% url 'main:index' %}#promotions" class="button-promotions">Акция</a>
+                <a href="{% url 'products:menuPage' %}" class="button-menu">Меню</a>
+                <a href="#" class="button-vacancy">Вакансии</a>
+            </div>
+        </div>
+    </nav>
+    {% block content %}
+    {%endblock%}
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3 class="footer-title">О нас</h3>
+                <p class="footer-text">Добро пожаловать в наше уютное кафе! Мы предлагаем вкусную еду, приятную атмосферу и отличный сервис.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-title">Контакты</h3>
+                <div class="footer-contact">
+                    <p><i class="footer-icon">📞</i> +7 (123) 456-78-90</p>
+                    <p><i class="footer-icon">📧</i> info@cafe.ru</p>
+                    <p><i class="footer-icon">📍</i> ул. Московское шоссе, 123</p>
+                    <p><i class="footer-icon">🕒</i> Пн-Вс: 9:00 - 23:00</p>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-title">Меню</h3>
+                <ul class="footer-menu">
+                    <li><a href="{% url 'products:category' 'soups' %}" class="footer-link">Супы</a></li>
+                    <li><a href="{% url 'products:category' 'seconds' %}" class="footer-link">Вторые блюда</a></li>
+                    <li><a href="{% url 'products:category' 'snacks' %}" class="footer-link">Закуски</a></li>
+                    <li><a href="{% url 'products:category' 'drinks' %}" class="footer-link">Напитки</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-title">Социальные сети</h3>
+                <div class="footer-social">
+                    <a href="https://t.me/MaxLikeVolleyball" class="social-link">📱 Telegram</a>
+                    <a href="https://vk.com/nguyenmaxim" class="social-link">📘 VK</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Кафе. Все права защищены.</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.location.hash) {
+                const targetElement = document.querySelector(window.location.hash);
+                if (targetElement) {
+                    setTimeout(function() {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }, 100);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
