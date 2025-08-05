@@ -30,9 +30,9 @@
         <div class="header-buttons">
             <div class="all-buttons">
                 <a href="{% url 'main:index' %}" class="button-index">Главная</a>
-                <a href="{% url 'main:index' %}#promotions" class="button-promotions">Акция</a>
+                <a href="{% url 'main:promo' %}" class="button-promotions">Акция</a>
                 <a href="{% url 'products:menuPage' %}" class="button-menu">Меню</a>
-                <a href="#" class="button-vacancy">Вакансии</a>
+                <a href="{% url 'main:vacancies' %}" class="button-vacancy">Вакансии</a>
             </div>
         </div>
     </nav>
@@ -78,21 +78,5 @@
             <p>&copy; 2024 Кафе. Все права защищены.</p>
         </div>
     </footer>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            if (window.location.hash) {
-                const targetElement = document.querySelector(window.location.hash);
-                if (targetElement) {
-                    setTimeout(function() {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }, 100);
-                }
-            }
-        });
-    </script>
 </body>
 </html>

@@ -624,3 +624,347 @@ body {
 .map-place{
     width: 100%;
 }
+
+/* Стили для страницы вакансий */
+.vacancy-section{
+    margin: 20px 0px 20px 40px;
+    align-self: flex-start;
+}
+
+.vacancy-cards-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 24px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.promo-cards-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 24px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.vacancy-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.promo-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.vacancy-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.promo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.vacancy-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    gap: 16px;
+}
+
+.promo-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    gap: 16px;
+}
+
+.vacancy-card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    flex: 1;
+}
+
+.promo-card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    flex: 1;
+}
+
+.vacancy-card-salary {
+    background: #b41f1f;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.promo-card-badge {
+    background: #b41f1f;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.vacancy-card-body {
+    margin-bottom: 20px;
+}
+
+.promo-card-body {
+    margin-bottom: 20px;
+}
+
+.vacancy-card-type {
+    margin-bottom: 12px;
+}
+
+.promo-card-date {
+    margin-bottom: 12px;
+}
+
+.vacancy-type-badge {
+    background: #f8f8f8;
+    color: #666;
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #e0e0e0;
+}
+
+.promo-date-badge {
+    background: #f8f8f8;
+    color: #666;
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #e0e0e0;
+}
+
+.vacancy-card-description {
+    color: #666;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.promo-card-description {
+    color: #666;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.vacancy-card-description p {
+    margin: 0;
+}
+
+.promo-card-description p {
+    margin: 0;
+}
+
+.vacancy-card-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.promo-card-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.vacancy-apply-btn {
+    background: #b41f1f;
+    color: #fff;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 24px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(180, 31, 31, 0.3);
+}
+
+.promo-card-btn {
+    background: #b41f1f;
+    color: #fff;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 24px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(180, 31, 31, 0.3);
+}
+
+.vacancy-apply-btn:hover {
+    background: #9a1a1a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(180, 31, 31, 0.4);
+}
+
+.promo-card-btn:hover {
+    background: #9a1a1a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(180, 31, 31, 0.4);
+}
+
+.no-vacancies {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+    grid-column: 1 / -1;
+}
+
+.no-promotions {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+    grid-column: 1 / -1;
+}
+
+.no-vacancies p {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+.no-vacancies p:first-child {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.no-promotions p {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+.no-promotions p:first-child {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Адаптивность для вакансий */
+@media (max-width: 768px) {
+    .vacancy-cards-row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 0 10px;
+    }
+    
+    .vacancy-card {
+        padding: 20px;
+        border-radius: 12px;
+    }
+    
+    .vacancy-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    .vacancy-card-title {
+        font-size: 18px;
+    }
+    
+    .vacancy-card-salary {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+    
+    .vacancy-apply-btn {
+        width: 100%;
+        padding: 14px 24px;
+    }
+}
+
+/* Адаптивность для акций */
+@media (max-width: 768px) {
+    .promo-cards-row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 0 10px;
+    }
+    
+    .promo-card {
+        padding: 20px;
+        border-radius: 12px;
+    }
+    
+    .promo-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    .promo-card-title {
+        font-size: 18px;
+    }
+    
+    .promo-card-badge {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+    
+    .promo-card-btn {
+        width: 100%;
+        padding: 14px 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .vacancy-card {
+        padding: 16px;
+    }
+    
+    .vacancy-card-title {
+        font-size: 16px;
+    }
+    
+    .vacancy-card-description {
+        font-size: 14px;
+    }
+    
+    .no-vacancies {
+        padding: 40px 15px;
+    }
+    
+    .promo-card {
+        padding: 16px;
+    }
+    
+    .promo-card-title {
+        font-size: 16px;
+    }
+    
+    .promo-card-description {
+        font-size: 14px;
+    }
+    
+    .no-promotions {
+        padding: 40px 15px;
+    }
+}

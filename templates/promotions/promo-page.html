@@ -5,36 +5,33 @@
     <main class="main-section">
         <section class="vacancy-section">
             <div class="vacancy-section-word">
-                <p><b>Вакансии</b></p>
+                <p><b>Акции</b></p>
             </div>
         </section>
         
         <section class="vacancy-items">
             <div class="vacancy-cards-row">
-                {% if vacancies %}
-                    {% for vacancy in vacancies %}
+                {% if promos %}
+                    {% for promo in promos %}
                     <div class="vacancy-card">
                         <div class="vacancy-card-header">
-                            <h3 class="vacancy-card-title">{{ vacancy.name }}</h3>
-                            <span class="vacancy-card-salary">{{ vacancy.salary }}₽</span>
+                            <h3 class="vacancy-card-title">{{ promo.name }}</h3>
+                            <span class="vacancy-card-salary">{{ promo.redText }}</span>
                         </div>
                         <div class="vacancy-card-body">
                             <div class="vacancy-card-type">
-                                <span class="vacancy-type-badge">{{ vacancy.time_type }}</span>
+                                <span class="vacancy-type-badge">{{ promo.time_type }}</span>
                             </div>
                             <div class="vacancy-card-description">
-                                <p>{{ vacancy.description }}</p>
+                                <p>{{ promo.description }}</p>
                             </div>
-                        </div>
-                        <div class="vacancy-card-footer">
-                            <button class="vacancy-apply-btn"><a href="https://t.me/MaxLikeVolleyball" style="text-decoration: none; color: white" target="_blank">Откликнуться</a></button>
                         </div>
                     </div>
                     {% endfor %}
                 {% else %}
                     <div class="no-vacancies">
-                        <p>На данный момент у нас нет открытых вакансий :(</p>
-                        <p>Но вы всегда можете отправить резюме на нашу почту!</p>
+                        <p>На данный момент у нас нет акций :(</p>
+                        <p>Но они скоро будут!</p>
                     </div>
                 {% endif %}
             </div>
