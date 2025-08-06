@@ -23,7 +23,7 @@
                                 <span class="vacancy-type-badge">{{ vacancy.time_type }}</span>
                             </div>
                             <div class="vacancy-card-description">
-                                <p>{{ vacancy.description }}</p>
+                                {{ vacancy.description|linebreaks }}
                             </div>
                         </div>
                         <div class="vacancy-card-footer">
