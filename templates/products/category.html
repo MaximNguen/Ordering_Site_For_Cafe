@@ -3,15 +3,16 @@
 {% block content %}
 <main class="main-section">
     <section class="menu-section">
-        <div class="menu-section-word">
+        <div class="menu-section-word category-menu-header-flex">
             <p><b>{{category.name}}</b></p>
+            <a href="/menu/" class="back-to-menu-btn">Вернуться в меню</a>
         </div>
     </section>
     <section class="promotions-items">
         <div class="promotions-cards-row">
             {% if dishes%}
             {%for dish in dishes%}
-            <a href="#" class="menu-card">
+            <a href="{% url 'products:product' category.slug dish.slug %}" class="menu-card">
                 <img src="{{ dish.image.url}}"  alt={{dish.name}} class="menu-card-image">
                 <span class="promotion-card-description">{{ dish.price }}₽ </span>
                 <span class="menu-card-title">{{dish.name}}</span>

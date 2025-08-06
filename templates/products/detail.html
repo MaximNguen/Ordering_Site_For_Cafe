@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<main class="main-section">
+    <section class="menu-section">
+        <div class="menu-section-word category-menu-header-flex">
+            <a href="{% url 'products:category' category.slug %}" class="back-to-menu-btn">&lt;</a>
+        </div>
+    </section>
+    <section class="product-detail-section">
+        <div class="product-detail-flex">
+            <div class="product-detail-image">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            </div>
+            <div class="product-detail-info">
+                <h2>{{ product.name }}</h2>
+                <div class="product-detail-price">{{ product.price }}₽</div>
+                <button class="add-to-cart-btn">Добавить в корзину</button>
+            </div>
+        </div>
+        <div class="product-detail-description">
+            <h3>Описание</h3>
+            <p>{{ product.description }}</p>
+        </div>
+    </section>
+</main>
+{%endblock%}
