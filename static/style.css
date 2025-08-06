@@ -796,19 +796,19 @@ body {
 }
 
 .vacancy-card-description {
+    display: block;
     color: #666;
     line-height: 1.6;
     font-size: 15px;
+}
+.vacancy-card-description p {
+    margin: 0 0 8px 0;
 }
 
 .promo-card-description {
     color: #666;
     line-height: 1.6;
     font-size: 15px;
-}
-
-.vacancy-card-description p {
-    margin: 0;
 }
 
 .promo-card-description p {
