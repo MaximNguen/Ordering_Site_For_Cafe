@@ -16,10 +16,10 @@
             </div>
             <div class="header-container-right">
                 {% if user.is_authenticated %}
-                    <a href="#" class="button-header-login">Профиль</a>
+                    <a href="{% url 'accounts:users-profile' %}" class="button-header-login">Профиль</a>
                     <a href="#" class="button-header-cart">Корзина</a>
                 {% else %}
-                    <a href="#" class="button-header-login">Вход</a>
+                    <a href="{% url 'login' %}" class="button-header-login">Вход</a>
                     <a href="#" class="button-header-cart">Корзина</a>
                 {% endif %}
             </div>

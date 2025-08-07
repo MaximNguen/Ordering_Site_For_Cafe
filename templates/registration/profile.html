@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Profile Page{% endblock title %}
+{% block content %}
+    <main class="main-section">
+    <div>
+        <img src="{{ user.profile.avatar.url }} " style="cursor: pointer; width: 200px; height: 200px;"/>
+    </div>
+    {% if user_form.errors %}
+        <div role="alert">
+            <div>
+                {% for key, value in user_form.errors.items %}
+                    <strong>{{ value }}</strong>
+                {% endfor %}
+            </div>
+            <button type="button" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    {% endif %}
+    <div class="form-content">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div>
+                <div>
+                    <div>
+                        <label>Username:</label>
+                        {{ user_form.username }}
+                        <hr>
+                        <label>Email:</label>
+                        {{ user_form.email }}
+                    </div>
+                    <hr>
+                    <div><a href="{% url 'password_change' %}">Change Password</a>
+                        <hr>
+                        <label>Change Avatar:</label>
+                        {{ profile_form.avatar }}
+                    </div>
+                    <hr>
+                    <label>Bio:</label> {{ profile_form.bio }}
+                </div>
+            </div>
+            <br><br>
+            <button type="submit">Save Changes</button>
+            <button type="reset">Reset</button>
+        </form>
+    </div>
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <a href="#" onclick="parentNode.submit();">Log Out</a>
+    </form>
+    </main>
+
+{% endblock content %}
