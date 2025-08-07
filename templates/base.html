@@ -19,7 +19,7 @@
                     <a href="#" class="button-header-login">Профиль</a>
                     <a href="#" class="button-header-cart">Корзина</a>
                 {% else %}
-                    <a href="#" class="button-header-login">Вход</a>
+                    <a href="{% url 'accounts:login' %}" class="button-header-login">Вход</a>
                     <a href="#" class="button-header-cart">Корзина</a>
                 {% endif %}
             </div>
