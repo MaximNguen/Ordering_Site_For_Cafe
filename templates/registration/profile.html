@@ -23,30 +23,34 @@
             <div>
                 <div>
                     <div>
-                        <label>Username:</label>
+                        <label>Никнейм:</label>
                         {{ user_form.username }}
                         <hr>
-                        <label>Email:</label>
+                        <label>Почта:</label>
                         {{ user_form.email }}
                     </div>
                     <hr>
-                    <div><a href="{% url 'password_change' %}">Change Password</a>
+                    <div><a href="{% url 'password_change' %}">Изменить пароль</a>
                         <hr>
-                        <label>Change Avatar:</label>
+                        <label>Изменить аватар:</label>
                         {{ profile_form.avatar }}
                     </div>
                     <hr>
-                    <label>Bio:</label> {{ profile_form.bio }}
+                    <label>Номер телефона и адрес:</label> {{ profile_form.bio }}
                 </div>
             </div>
             <br><br>
-            <button type="submit">Save Changes</button>
-            <button type="reset">Reset</button>
+            <button type="submit">Сохранить изменения</button>
+            <button type="reset">Отмена</button>
         </form>
     </div>
-    <form action="{% url 'logout' %}" method="post">
+    <p action="{% url 'logout' %}" method="post">
         {% csrf_token %}
-        <a href="#" onclick="parentNode.submit();">Log Out</a>
+        <p>
+        <form action="{% url 'logout' %}" method="post">{% csrf_token %}
+            <a href="#" class="nav-link" onclick="parentNode.submit();">Выйти из системы</a>
+        </form>
+    </p>
     </form>
     </main>
 
