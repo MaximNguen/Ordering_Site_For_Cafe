@@ -15,7 +15,12 @@
             <div class="product-detail-info">
                 <h2>{{ product.name }}</h2>
                 <div class="product-detail-price">{{ product.price }}₽</div>
-                <button class="add-to-cart-btn">Добавить в корзину</button>
+                <form action="{% url 'cart:cart_add' product.id %}" method="post">
+                    {% csrf_token %}
+                    <input type="number" name="quantity" value="1" min="1">
+                    <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                    <button type="submit" class="add-to-cart-btn">Добавить в корзину</button>
+                </form>
             </div>
         </div>
         <div class="product-detail-description">
@@ -24,4 +29,4 @@
         </div>
     </section>
 </main>
-{%endblock%}
+{% endblock %}
