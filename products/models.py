@@ -23,7 +23,7 @@ class Dish(models.Model):
         verbose_name='Категория'
     )
     description = models.TextField(verbose_name='Описание')
-    price = models.IntegerField(max_length=10, verbose_name='Цена')
+    price = models.IntegerField(verbose_name='Цена')
     image = models.ImageField(upload_to='dishes/', blank=True, null=True, verbose_name='Изображение')
     image2 = models.ImageField(upload_to='dishes/', blank=True, null=True, verbose_name='Изображение для описании')
 

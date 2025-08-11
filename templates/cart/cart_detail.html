@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<main class="main-section">
+    <section class="menu-section">
+        <div class="menu-section-word">
+            <p><b>Ваша корзина</b></p>
+        </div>
+    </section>
+
+    <section class="cart-items">
+        {% if cart_items %}
+        <div class="cart-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Товар</th>
+                        <th>Количество</th>
+                        <th>Цена</th>
+                        <th>Сумма</th>
+                        <th>Удалить</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in cart_items %}
+                    <tr>
+                        <td>{{ item.product.name }}</td>
+                        <td>
+                            <form action="{% url 'cart:cart_add' item.product.id %}" method="post">
+                                {% csrf_token %}
+                                <input type="number" name="quantity" value="{{ item.quantity }}" min="1">
+                                <input type="hidden" name="mode" value="set">
+                                <button type="submit">Обновить</button>
+                            </form>
+                        </td>
+                        <td>{{ item.product.price }}₽</td>
+                        <td>{{ item.total_price }}₽</td>
+                        <td>
+                            <form action="{% url 'cart:cart_remove' item.product.id %}" method="post">
+                                {% csrf_token %}
+                                <button type="submit">Удалить</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">Итого:</td>
+                        <td colspan="2">{{ total }}₽</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div class="cart-actions">
+            <a href="{% url 'products:menuPage' %}" class="continue-shopping">Продолжить покупки</a>
+            <a href="{% url 'cart:cart_clear' %}" class="clear-cart">Очистить корзину</a>
+            <a href="#" class="checkout">Оформить заказ</a>
+        </div>
+        {% else %}
+        <div class="empty-cart">
+            <p>Ваша корзина пуста</p>
+            <a href="{% url 'products:menuPage' %}" class="continue-shopping">Перейти в меню</a>
+        </div>
+        {% endif %}
+    </section>
+</main>
+{% endblock %}

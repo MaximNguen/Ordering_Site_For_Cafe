@@ -17,10 +17,24 @@
             <div class="header-container-right">
                 {% if user.is_authenticated %}
                     <a href="{% url 'accounts:users-profile' %}" class="button-header-login">Профиль</a>
-                    <a href="#" class="button-header-cart">Корзина</a>
+                    <a href="{% url 'cart:cart_detail' %}" class="button-header-cart">
+    Корзина
+    {% with total_items=cart|length %}
+        {% if total_items > 0 %}
+            ({{ total_items }})
+        {% endif %}
+    {% endwith %}
+</a>
                 {% else %}
                     <a href="{% url 'login' %}" class="button-header-login">Вход</a>
-                    <a href="#" class="button-header-cart">Корзина</a>
+                    <a href="{% url 'cart:cart_detail' %}" class="button-header-cart">
+    Корзина
+    {% with total_items=cart|length %}
+        {% if total_items > 0 %}
+            ({{ total_items }})
+        {% endif %}
+    {% endwith %}
+</a>
                 {% endif %}
             </div>
 
