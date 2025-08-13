@@ -1121,7 +1121,6 @@ body {
 .cart-actions {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
 }
 
 .continue-shopping, .clear-cart, .checkout {
@@ -1134,16 +1133,65 @@ body {
 .continue-shopping {
     background-color: #6c757d;
     color: white;
+    margin: 5px;
 }
 
 .clear-cart {
     background-color: #dc3545;
     color: white;
+    margin: 5px;
 }
-
+.buttons-profile-header {
+    margin: 20px;
+}
+.my-orders-button{
+    background-color: #6c757d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.submit-order{
+    background-color: #28a745;
+    color: white;
+    margin: 5px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.submit-profile{
+    background-color: #28a745;
+    color: white;
+    margin: 5px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.cancel-profile{
+    background-color: #dc3545;
+    color: white;
+    margin: 5px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.nav-link{
+    background-color: #dc3545;
+    color: white;
+    margin: 5px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+}
 .checkout {
     background-color: #28a745;
     color: white;
+    margin: 5px;
 }
 
 .empty-cart {

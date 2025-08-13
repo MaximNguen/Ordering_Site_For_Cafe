@@ -5,6 +5,9 @@
     <div>
         <img src="{{ user.profile.avatar.url }} " style="cursor: pointer; width: 200px; height: 200px;"/>
     </div>
+    <div class="buttons-profile-header">
+        <a href="{% url 'orders:order_list' %}" class="my-orders-button">Мои заказы</a>
+    </div>
     {% if user_form.errors %}
         <div role="alert">
             <div>
@@ -40,8 +43,8 @@
                 </div>
             </div>
             <br><br>
-            <button type="submit">Сохранить изменения</button>
-            <button type="reset">Отмена</button>
+            <button type="submit" class="submit-profile">Сохранить изменения</button>
+            <button type="reset" class="cancel-profile">Отмена</button>
         </form>
     </div>
     <p action="{% url 'logout' %}" method="post">
