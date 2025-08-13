@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<main class="main-section">
+    <section class="menu-section">
+        <div class="menu-section-word">
+            <p><b>Оформление заказа</b></p>
+        </div>
+    </section>
+
+    <section class="order-form-section">
+        <div class="order-summary">
+            <h3>Ваш заказ</h3>
+            <ul>
+                {% for item in cart_items %}
+                <li>{{ item.quantity }} x {{ item.product.name }} - {{ item.total_price }}₽</li>
+                {% endfor %}
+            </ul>
+            <p><strong>Итого: {{ total }}₽</strong></p>
+        </div>
+
+        <form method="post" class="order-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="submit-order">Подтвердить заказ</button>
+        </form>
+    </section>
+</main>
+{% endblock %}

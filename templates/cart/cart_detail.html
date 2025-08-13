@@ -55,7 +55,7 @@
         <div class="cart-actions">
             <a href="{% url 'products:menuPage' %}" class="continue-shopping">Продолжить покупки</a>
             <a href="{% url 'cart:cart_clear' %}" class="clear-cart">Очистить корзину</a>
-            <a href="#" class="checkout">Оформить заказ</a>
+            <a href="{% url 'orders:create_order' %}" class="checkout">Оформить заказ</a>
         </div>
         {% else %}
         <div class="empty-cart">
