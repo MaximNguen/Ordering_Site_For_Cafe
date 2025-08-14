@@ -7,7 +7,6 @@
     <li><strong>Backend:</strong> Python, Django</li>
     <li><strong>Frontend:</strong> HTML, CSS, JavaScript, Bootstrap</li>
     <li><strong>База данных:</strong> PostgreSQL</li>
-    <li><strong>Асинхронные задачи:</strong> Celery, Redis</li>
     <li><strong>Контейнеризация:</strong> Docker</li>
     <li><strong>Тестирование:</strong> PyTest</li>
 </ul>
