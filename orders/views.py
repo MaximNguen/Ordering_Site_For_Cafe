@@ -35,8 +35,12 @@ def create_order(request):
                     price = item.product.price,
                 )
 
-            # Clear the cart items after order is created
             current_cart.items.all().delete()
+
+            if order.payment_method == "card":
+                order.status = 'paid'
+                order.save()
+            
             return redirect('orders:order_detail', order_id=order.id)
 
     else:
