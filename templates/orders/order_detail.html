@@ -13,13 +13,15 @@
         <div class="order-info">
             <p><strong>Статус:</strong> {{ order.get_status_display }}</p>
             <p><strong>Дата создания:</strong> {{ order.created_at }}</p>
+            <p><strong>Способ получения:</strong> {{ order.get_delivery_method_display }}</p>
+            <p><strong>Способ оплаты:</strong> {{ order.get_payment_method_display }}</p>
             <p><strong>Адрес доставки:</strong> {{ order.delivery_address }}</p>
             <p><strong>Телефон:</strong> {{ order.phone_number }}</p>
             {% if order.comments %}<p><strong>Комментарии:</strong> {{ order.comments }}</p>{% endif %}
         </div>
 
-        <div class="order-items">
-            <h3>Состав заказа</h3>
+    <h3>Состав заказа</h3>
+        <div class="cart-table">
             <table>
                 <thead>
                     <tr>
@@ -35,7 +37,7 @@
                         <td>{{ item.product.name }}</td>
                         <td>{{ item.quantity }}</td>
                         <td>{{ item.price }}₽</td>
-                        <td>{{ item.get_total }}₽</td>
+                        <td>{{ item.total_price }}₽</td>
                     </tr>
                     {% endfor %}
                 </tbody>
