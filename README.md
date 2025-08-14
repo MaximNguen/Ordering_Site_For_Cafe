@@ -10,7 +10,6 @@
     <li><strong>Асинхронные задачи:</strong> Celery, Redis</li>
     <li><strong>Контейнеризация:</strong> Docker</li>
     <li><strong>Тестирование:</strong> PyTest</li>
-        <li><strong>Авториззация:</strong> Oauth2</li>
 </ul>
 
 <h2>Основные функции</h2>
