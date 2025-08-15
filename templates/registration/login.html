@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <main class="main-section">
+    <h2> Вход в систему </h2>
+    <form method="post">
+        <p>Никнейм: {{ form.username }}</p>
+        <p>Пароль: {{ form.password }}</p>
+        <p>Запомнить меня: {{ form.remember_me }}</p>
+         <p><a href="{% url 'password_reset' %}">Забыли пароль или никнейм?</a></p>
+        {% csrf_token %}
+        <p><input type="submit" value="Войти"></p>
+    </form>
+        Не имеете аккаунт?
+    <a href="{% url 'accounts:signup' %}">Регистрация</a>
+    </main>
+{% endblock %}

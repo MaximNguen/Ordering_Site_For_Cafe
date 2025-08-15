@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<main class="main-section">
+    <section class="menu-section">
+        <div class="menu-section-word">
+            <p><b>Оформление заказа</b></p>
+        </div>
+    </section>
+
+    <section class="order-form-section">
+        <div class="order-summary">
+            <h3>Ваш заказ</h3>
+            <ul>
+                {% for item in cart_items %}
+                <li>{{ item.quantity }} x {{ item.product.name }} - {{ item.total_price }}₽</li>
+                {% endfor %}
+            </ul>
+            <p><strong>Итого: {{ total }}₽</strong></p>
+        </div>
+
+        <form method="post" class="order-form" id="order-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="submit-order" id="submit-button">Подтвердить заказ</button>
+        </form>
+    </section>
+</main>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const deliveryMethod = document.getElementById('id_delivery_method');
+    const addressInput = document.getElementById('id_delivery_address');
+    const pickupSelect = document.getElementById('id_pickup_location');
+    const orderForm = document.getElementById('order-form');
+    const submitButton = document.getElementById('submit-button');
+
+    if (!deliveryMethod || !addressInput || !pickupSelect) return;
+
+    const addressWrapper = addressInput.closest('p') || addressInput.parentElement;
+    const pickupWrapper = pickupSelect.closest('p') || pickupSelect.parentElement;
+
+    function syncAddressFromPickup() {
+        const option = pickupSelect.options[pickupSelect.selectedIndex];
+        if (option) {
+            addressInput.value = option.text;
+        }
+    }
+
+    function updateVisibility() {
+        const isPickup = deliveryMethod.value === 'pickup';
+        if (isPickup) {
+            if (addressWrapper) addressWrapper.style.display = 'none';
+            if (pickupWrapper) pickupWrapper.style.display = '';
+            addressInput.removeAttribute('required');
+            if (pickupSelect.value) syncAddressFromPickup();
+        } else {
+            if (addressWrapper) addressWrapper.style.display = '';
+            if (pickupWrapper) pickupWrapper.style.display = 'none';
+            addressInput.setAttribute('required', 'required');
+        }
+    }
+
+    function updateButtonBehavior() {
+        const isDelivery = deliveryMethod.value === 'delivery';
+        if (isDelivery) {
+            submitButton.textContent = 'Оплатить заказ';
+            orderForm.setAttribute('data-payment-required', 'true');
+        } else {
+            submitButton.textContent = 'Подтвердить заказ';
+            orderForm.removeAttribute('data-payment-required');
+        }
+    }
+
+    deliveryMethod.addEventListener('change', updateVisibility);
+    deliveryMethod.addEventListener('change', updateButtonBehavior);
+    pickupSelect.addEventListener('change', syncAddressFromPickup);
+    updateVisibility();
+    updateButtonBehavior();
+});
+</script>
+{% endblock %}

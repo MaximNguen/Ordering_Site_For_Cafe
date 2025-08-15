@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+    {% block content %}
+
+    <main class="main-section">
+        <section class="vacancy-section">
+            <div class="vacancy-section-word">
+                <p><b>Акции</b></p>
+            </div>
+        </section>
+        
+        <section class="vacancy-items">
+            <div class="vacancy-cards-row">
+                {% if promos %}
+                    {% for promo in promos %}
+                    <div class="vacancy-card">
+                        <div class="vacancy-card-header">
+                            <h3 class="vacancy-card-title">{{ promo.name }}</h3>
+                            <span class="vacancy-card-salary">{{ promo.redText }}</span>
+                        </div>
+                        <div class="vacancy-card-body">
+                            <div class="vacancy-card-type">
+                                <span class="vacancy-type-badge">{{ promo.time_type }}</span>
+                            </div>
+                            <div class="vacancy-card-description">
+                                <p>{{ promo.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="no-vacancies">
+                        <p>На данный момент у нас нет акций :(</p>
+                        <p>Но они скоро будут!</p>
+                    </div>
+                {% endif %}
+            </div>
+        </section>
+    </main>
+    
+    
+    {% endblock %}

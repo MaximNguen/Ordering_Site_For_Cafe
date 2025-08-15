@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load static %}
+    {% block content %}
+    <div class="video-presentation-section">
+        <video autoplay muted loop>
+            <source src="{% static 'logoVideo.mp4' %}" type="video/mp4">
+        </video>
+        <div class="logo-on-video">
+            <img src="{% static 'logo.png' %}" alt="Логотип">
+        </div>
+    </div>
+    <main class="main-section">
+
+    <section class="menu-section">
+            <div class="menu-section-word">
+                <p><b>Меню</b></p>
+            </div>
+        </section>
+        <section class="menu-items">
+        <div class="menu-cards-row">
+            {% if menu%}
+            {%for item in menu%}
+            <a href="{% url 'products:category' item.slug %}" class="menu-card">
+                <img src="{{ item.image.url}}"  alt={{item.name}} class="menu-card-image">
+                <span class="menu-card-title">{{item.name}}</span>
+            </a>
+            {%endfor%}
+            {%else%}
+            <p>Не найдены категории меню</p>
+            {%endif%}
+        </div>
+        </section>
+        <section class="promotions-section" id="promotions">
+            <div class="promotions-section-word">
+                <p><b>Акция</b></p>
+            </div>
+        </section>
+        <section class="promotions-items">
+            <div class="promotions-cards-row">
+                {% if promotions%}
+                {%for promo in promotions%}
+                <a href="#" class="promotion-card">
+                    <img src="{{ promo.image.url }}" alt="Акция 1" class="promotion-card-image">
+                    <span class="promotion-card-description">{{ promo.redText }}</span>
+                    <span class="promotion-card-title">{{ promo.name }}</span>
+                </a>
+                {% endfor %}
+                {% else %}
+                <p>На данный момент у нас не акции :(</p>
+                {% endif %}
+            </div>
+        </section>
+        <div class="map_place">
+            <h3 style="margin-top: 40px; text-align: center;">Где нас найти?</h3>
+            <div style="position:relative;overflow:hidden;width:100%;height:400px;border-radius:16px;box-shadow:0 4px 16px rgba(0,0,0,0.1);">
+                <a href="https://yandex.ru/maps/org/hanoi/97574318406/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Hanoi</a>
+                <a href="https://yandex.ru/maps/195/ulyanovsk/category/fast_food/184106386/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Быстрое питание в Ульяновске</a>
+                <a href="https://yandex.ru/maps/195/ulyanovsk/category/restaurant/184106394/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:28px;">Ресторан в Ульяновске</a>
+                <iframe src="https://yandex.ru/map-widget/v1/org/hanoi/97574318406/?ll=48.361892%2C54.306666&z=16" width="100%" height="100%" frameborder="0" allowfullscreen="true" style="position:relative;border-radius:16px;"></iframe>
+            </div>
+        </div>
+    </main>
+    
+    {% endblock %}

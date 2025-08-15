@@ -1,32 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ef45664-543a-4190-841a-1990e3f89cb9" name="Changes" comment="" />
+    <list default="true" id="62989973-3412-4e6d-9493-2c11a1ba9ed5" name="Changes" comment="Add change status when pay by card">
+      <change afterPath="$PROJECT_DIR$/orders/api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/integrations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/orders/order_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/orders/order_detail.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="develop" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev_orders" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
-  <component name="ProjectId" id="30gpcBDJBtSVjNoDjBVmL5qny9T" />
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;MaximNguen&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/MaximNguen/Ordering_Site_For_Cafe.git&quot;,
+    &quot;accountId&quot;: &quot;7e1f1cdf-fb2a-4f48-a4fd-878063bd937a&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="30rwsXCSNZH9LJ5IX9TyI2xVB8Z" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev__add__bot__status__checker&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/python/Projects/Ordering_Site_For_Cafe/media&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.intellij.platform.ide.impl.presentationAssistant.PresentationAssistantConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\python\Projects\Ordering_Site_For_Cafe\media" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -37,16 +107,145 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3ef45664-543a-4190-841a-1990e3f89cb9" name="Changes" comment="" />
-      <created>1754059146406</created>
+      <changelist id="62989973-3412-4e6d-9493-2c11a1ba9ed5" name="Changes" comment="" />
+      <created>1754399209455</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1754059146406</updated>
-      <workItem from="1754059147424" duration="1000" />
+      <updated>1754399209455</updated>
+      <workItem from="1754399211337" duration="8000" />
+      <workItem from="1754405417269" duration="2784000" />
+      <workItem from="1754460929149" duration="20000" />
+      <workItem from="1754460950698" duration="7302000" />
+      <workItem from="1754488792819" duration="2515000" />
+      <workItem from="1754499186039" duration="20000" />
+      <workItem from="1754499274769" duration="3000" />
+      <workItem from="1754555322474" duration="1495000" />
+      <workItem from="1754557428568" duration="2689000" />
+      <workItem from="1754560161098" duration="7884000" />
+      <workItem from="1754656162681" duration="184000" />
+      <workItem from="1754893992751" duration="416000" />
+      <workItem from="1754900237087" duration="3167000" />
+      <workItem from="1754905020091" duration="2968000" />
+      <workItem from="1754908901647" duration="259000" />
+      <workItem from="1755002986537" duration="5795000" />
+      <workItem from="1755070447860" duration="12415000" />
+      <workItem from="1755277618081" duration="4152000" />
     </task>
+    <task id="LOCAL-00001" summary="Add menu and categories">
+      <option name="closed" value="true" />
+      <created>1754405460182</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1754405460183</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add vacancy and promotions...">
+      <option name="closed" value="true" />
+      <created>1754409490398</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1754409490398</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add detail for every dish">
+      <option name="closed" value="true" />
+      <created>1754488273122</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1754488273122</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add linebrakes">
+      <option name="closed" value="true" />
+      <created>1754489338642</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1754489338642</updated>
+    </task>
+    <task id="LOCAL-00005" summary="uh forgot to make new branch">
+      <option name="closed" value="true" />
+      <created>1754558599360</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1754558599360</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add profile and registration system">
+      <option name="closed" value="true" />
+      <created>1754572482570</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1754572482570</updated>
+    </task>
+    <task id="LOCAL-00007" summary="made cart adding">
+      <option name="closed" value="true" />
+      <created>1754908920161</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1754908920161</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Remove button update in cart">
+      <option name="closed" value="true" />
+      <created>1755009567015</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1755009567015</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Add change status when pay by card">
+      <option name="closed" value="true" />
+      <created>1755254122655</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1755254122655</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add menu and categories" />
+    <MESSAGE value="Add vacancy and promotions..." />
+    <MESSAGE value="Add detail for every dish" />
+    <MESSAGE value="Add linebrakes" />
+    <MESSAGE value="uh forgot to make new branch" />
+    <MESSAGE value="Add profile and registration system" />
+    <MESSAGE value="made cart adding" />
+    <MESSAGE value="Remove button update in cart" />
+    <MESSAGE value="Add change status when pay by card" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add change status when pay by card" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/products/apps.py</url>
+          <line>5</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/orders/views.py</url>
+          <line>52</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
