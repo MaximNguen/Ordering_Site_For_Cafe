@@ -36,14 +36,15 @@ def create_order(request):
                     price = item.product.price,
                 )
 
-            # Clear the cart items after order is created
             current_cart.items.all().delete()
+
 
             try:
                 print(">>> Создаём заказ и отправляем в бота")
                 send_order_to_bot(order)
             except Exception as e:
                 pass
+
             return redirect('orders:order_detail', order_id=order.id)
 
     else:

@@ -7,6 +7,7 @@ from products.models import Dish
 class Order(models.Model):
     STATUS_CHOICES = (
     ('new', 'Новый'),
+    ('paid', 'Оплачен'),
     ('confirmed', 'Подтвержденный'),
     ('in_progress', 'В обработке'),
     ('ready', 'Готов к выдаче'),
