@@ -6,14 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="62989973-3412-4e6d-9493-2c11a1ba9ed5" name="Changes" comment="Remove button update in cart">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/delivery/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/delivery/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/orders/create_order.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/orders/create_order.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/orders/order_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/orders/order_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/orders/order_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/orders/order_list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
