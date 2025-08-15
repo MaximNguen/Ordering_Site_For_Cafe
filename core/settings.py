@@ -59,6 +59,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+BOT_SERVICE_URL = os.getenv("BOT_SERVICE_URL")
+BOT_SHARED_SECRET = os.getenv("BOT_SHARED_SECRET")
+TELEGRAM_ADMIN_CHAT_ID = int(os.getenv("TELEGRAM_ADMIN_CHAT_ID"))
+
 LOGIN_URL = '/accounts/login/'
 ROOT_URLCONF = 'core.urls'
 LOGIN_REDIRECT_URL = '/'

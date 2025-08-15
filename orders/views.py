@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from cart.utils import get_cart_items, get_cart_total
 from .forms import OrderForm
+from .integrations import send_order_to_bot
 from .models import Order, OrderItem
 from cart.models import CartItem, Cart
 
@@ -37,10 +38,13 @@ def create_order(request):
 
             current_cart.items.all().delete()
 
-            if order.payment_method == "card":
-                order.status = 'paid'
-                order.save()
-            
+
+            try:
+                print(">>> Создаём заказ и отправляем в бота")
+                send_order_to_bot(order)
+            except Exception as e:
+                pass
+
             return redirect('orders:order_detail', order_id=order.id)
 
     else:
