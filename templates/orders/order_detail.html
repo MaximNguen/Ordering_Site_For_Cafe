@@ -12,7 +12,7 @@
     <section class="order-details">
         <div class="order-info">
             <p><strong>Статус:</strong> {{ order.get_status_display }}</p>
-            <p><strong>Дата создания:</strong> {{ order.created_at }}</p>
+            <p><strong>Дата создания:</strong> {{ order.created_at_samara }}</p>
             <p><strong>Способ получения:</strong> {{ order.get_delivery_method_display }}</p>
             <p><strong>Способ оплаты:</strong> {{ order.get_payment_method_display }}</p>
                 {% if order.pickup_location %}

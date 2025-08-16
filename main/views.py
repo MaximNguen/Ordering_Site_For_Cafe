@@ -20,3 +20,6 @@ def promotions(request):
     promos = Promotions.objects.all()
 
     return render(request, 'promotions/promo-page.html', {"promos": promos})
+
+def conditions(request):
+    return render(request, 'conditions.html')
