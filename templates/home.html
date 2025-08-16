@@ -39,7 +39,7 @@
             <div class="promotions-cards-row">
                 {% if promotions%}
                 {%for promo in promotions%}
-                <a href="#" class="promotion-card">
+                <a href="{% url 'main:promo' %}" class="promotion-card">
                     <img src="{{ promo.image.url }}" alt="Акция 1" class="promotion-card-image">
                     <span class="promotion-card-description">{{ promo.redText }}</span>
                     <span class="promotion-card-title">{{ promo.name }}</span>
