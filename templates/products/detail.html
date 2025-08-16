@@ -17,7 +17,7 @@
                 <div class="product-detail-price">{{ product.price }}₽</div>
                 <form action="{% url 'cart:cart_add' product.id %}" method="post">
                     {% csrf_token %}
-                    <input type="number" name="quantity" value="1" min="1">
+                    <input type="number" name="quantity" value="1" min="1"><br>
                     <input type="hidden" name="next" value="{{ request.get_full_path }}">
                     <button type="submit" class="add-to-cart-btn">Добавить в корзину</button>
                 </form>

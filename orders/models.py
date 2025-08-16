@@ -1,5 +1,7 @@
 from django.db import models
 from django.conf import settings
+from django.utils import timezone
+import pytz
 from cart.models import Cart
 from delivery.models import Location
 from products.models import Dish
@@ -16,8 +18,8 @@ class Order(models.Model):
     )
 
     PAYMENT_METHOD_CHOICES = (
-        ('card', 'Оплата картой'),
-        ('afterpay', 'Оплата при получении'),
+        ('card', 'Оплата картой (Переводом)'),
+        ('afterpay', 'Оплата наличными'),
     )
 
     DELIVERY_METHOD_CHOICES = (
@@ -53,6 +55,16 @@ class Order(models.Model):
         if self.pickup_location:
             return self.pickup_location.address
         return ""
+
+    def get_samara_time(self, dt):
+        tz = pytz.timezone('Europe/Samara')
+        return dt.astimezone(tz)
+
+    def created_at_samara(self):
+        return self.get_samara_time(self.created_at).strftime('%d.%m.%Y %H:%M')
+
+    def updated_at_samara(self):
+        return self.get_samara_time(self.updated_at).strftime('%d.%m.%Y %H:%M')
 
 
 class OrderItem(models.Model):
