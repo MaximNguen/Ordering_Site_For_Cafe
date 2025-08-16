@@ -18,6 +18,11 @@ def create_order(request):
         form = OrderForm(request.POST)
         if form.is_valid():
             current_cart = request.user.cart_set.first()
+
+            if hasattr(current_cart, 'order'):
+                return redirect('orders:order_detail', order_id=current_cart.order.id)
+
+            
             order = form.save(commit=False)
             order.user = request.user
             order.cart = current_cart

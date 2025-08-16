@@ -66,3 +66,5 @@ class OrderItem(models.Model):
 
     def total_price(self):
         return self.price * self.quantity
+
+
