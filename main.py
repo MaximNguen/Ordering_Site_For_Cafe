@@ -44,19 +44,19 @@ def build_keyboard(order_id: int) -> InlineKeyboardMarkup:
 def order_text(data: Dict[str, Any]) -> str:
     lines = [
         f"📦 <b>Новый заказ #{data['order_id']}</b>",
-        f"👤 {data.get('username') or '—'}",
-        f"📞 {data.get('phone') or '—'}",
-        f"💰 {data.get('payment_method')}",
+        f"👤 Имя - {data.get('first_name') or '—'}",
+        f"📞 Номер телефона - {data.get('phone') or '—'}",
+        f"💰 Способ оплаты - {data.get('payment_method')}",
     ]
 
     if data.get("pickup_address"):
         lines.append("🚚 Самовывоз")
-        lines.append(f"🏠 {data.get('pickup_address') or '—'}")
+        lines.append(f"🏠 Адрес заведения - {data.get('pickup_address') or '—'}")
     else:
         lines.append(f"🚚 {data.get('delivery_method') or '—'}")
-        lines.append(f"🏠 {data.get('address') or '—'}")
+        lines.append(f"🏠 Адрес доставки - {data.get('address') or '—'}")
 
-    lines.append(f"💰 <b>{data.get('total')}₽</b>")
+    lines.append(f"💰 Итоговая сумма - <b>{data.get('total')}₽</b>")
 
     comment = data.get("comment")
     if comment:
@@ -65,6 +65,7 @@ def order_text(data: Dict[str, Any]) -> str:
     items = data.get("items") or []
     if items:
         lines.append("")
+        lines.append("💰 Заказ:")
         for it in items:
             lines.append(f"• {it['name']} x{it['qty']} = {it['total']}₽")
 

@@ -44,6 +44,8 @@ class Order(models.Model):
     phone_number = models.CharField(max_length=20, verbose_name='Номер телефона')
     comments = models.TextField(blank=True, null=True, verbose_name='Комментарии и время')
 
+    is_paid = models.BooleanField(default=False, verbose_name="Оплачено")
+
     def __str__(self):
         return f"Order #{self.id} - {self.user.email}"
 

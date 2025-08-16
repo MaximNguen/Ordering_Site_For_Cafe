@@ -29,7 +29,7 @@
 </main>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-    const deliveryMethod = document.getElementById('id_delivery_method');
+    const deliveryMethod = document.getElementById('id_payment_method');
     const addressInput = document.getElementById('id_delivery_address');
     const pickupSelect = document.getElementById('id_pickup_location');
     const orderForm = document.getElementById('order-form');
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function updateButtonBehavior() {
-        const isDelivery = deliveryMethod.value === 'delivery';
+        const isDelivery = deliveryMethod.value === 'card';
         if (isDelivery) {
             submitButton.textContent = 'Оплатить заказ';
             orderForm.setAttribute('data-payment-required', 'true');
