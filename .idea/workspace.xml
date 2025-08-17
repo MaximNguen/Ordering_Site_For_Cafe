@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62989973-3412-4e6d-9493-2c11a1ba9ed5" name="Changes" comment="upgrade message on bot and add in models first name for form taking out to see in profile">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="62989973-3412-4e6d-9493-2c11a1ba9ed5" name="Changes" comment="add conditions and price for delivery">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bot_For_Ordering_Site/requirements.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +15,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -72,6 +70,8 @@
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.models.executor&quot;: &quot;Run&quot;,
+    &quot;Python.views.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;dev__refactoring__2&quot;,
@@ -129,6 +129,11 @@
       <workItem from="1755286211665" duration="9000" />
       <workItem from="1755286274968" duration="461000" />
       <workItem from="1755336452296" duration="8581000" />
+      <workItem from="1755354990327" duration="1656000" />
+      <workItem from="1755358312701" duration="2814000" />
+      <workItem from="1755362098856" duration="2000" />
+      <workItem from="1755362141803" duration="219000" />
+      <workItem from="1755418415752" duration="4008000" />
     </task>
     <task id="LOCAL-00001" summary="Add menu and categories">
       <option name="closed" value="true" />
@@ -242,7 +247,39 @@
       <option name="project" value="LOCAL" />
       <updated>1755354127913</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="ixed fields in form for order :/">
+      <option name="closed" value="true" />
+      <created>1755355957242</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1755355957242</updated>
+    </task>
+    <task id="LOCAL-00016" summary="ixed fields in form for order :/">
+      <option name="closed" value="true" />
+      <created>1755356660842</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1755356660842</updated>
+    </task>
+    <task id="LOCAL-00017" summary="add conditions and fixed time">
+      <option name="closed" value="true" />
+      <created>1755361702787</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1755361702787</updated>
+    </task>
+    <task id="LOCAL-00018" summary="add conditions and price for delivery">
+      <option name="closed" value="true" />
+      <created>1755425847481</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1755425847481</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,7 +311,10 @@
     <MESSAGE value="Add reqs" />
     <MESSAGE value="Fixed button for payment" />
     <MESSAGE value="upgrade message on bot and add in models first name for form taking out to see in profile" />
-    <option name="LAST_COMMIT_MESSAGE" value="upgrade message on bot and add in models first name for form taking out to see in profile" />
+    <MESSAGE value="ixed fields in form for order :/" />
+    <MESSAGE value="add conditions and fixed time" />
+    <MESSAGE value="add conditions and price for delivery" />
+    <option name="LAST_COMMIT_MESSAGE" value="add conditions and price for delivery" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -284,15 +324,12 @@
           <line>5</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/orders/views.py</url>
-          <line>48</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Ordering_Site_For_Cafe$main.coverage" NAME="main Coverage Results" MODIFIED="1755286428723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Ordering_Site_For_Cafe$views.coverage" NAME="views Coverage Results" MODIFIED="1755360594949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
+    <SUITE FILE_PATH="coverage/Ordering_Site_For_Cafe$models.coverage" NAME="models Coverage Results" MODIFIED="1755358360793" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/orders" />
   </component>
 </project>

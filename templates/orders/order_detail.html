@@ -22,6 +22,9 @@
                 {% endif %}
             <p><strong>Телефон:</strong> {{ order.phone_number }}</p>
             {% if order.comments %}<p><strong>Комментарии:</strong> {{ order.comments }}</p>{% endif %}
+        {% if order.get_delivery_method_display == 'Доставка' %}
+            <p><strong>Стоимость доставки: </strong>150₽</p>
+        {% endif %}
         </div>
 
     <h3>Состав заказа</h3>

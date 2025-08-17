@@ -17,12 +17,26 @@ def create_order(request):
     if request.method == 'POST':
         form = OrderForm(request.POST)
         if form.is_valid():
+
+            delivery_method = form.cleaned_data.get('delivery_method')
+            if delivery_method == 'delivery' and total < 1500:
+                form.add_error('delivery_method', 'Минимальная сумма заказа для доставки - 1500 рублей')
+                return render(request, 'orders/create_order.html', {
+                    'form': form,
+                    'cart_items': cart_items,
+                    'total': total,
+                    'delivery_price': 150,
+                })
+
+            if delivery_method == 'delivery' and total >= 1500:
+                total = total + 150
+
             current_cart = request.user.cart_set.first()
 
             if hasattr(current_cart, 'order'):
                 return redirect('orders:order_detail', order_id=current_cart.order.id)
 
-            
+
             order = form.save(commit=False)
             order.user = request.user
             order.cart = current_cart
@@ -52,10 +66,11 @@ def create_order(request):
         form = OrderForm()
 
     return render(request, 'orders/create_order.html', {
-        'form': form,
-        'cart_items': cart_items,
-        'total': total,
-    })
+            'form': form,
+            'cart_items': cart_items,
+            'total': total,
+            'delivery_price': 150,
+        })
 
 
 @login_required
