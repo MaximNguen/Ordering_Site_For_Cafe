@@ -68,6 +68,11 @@ LOGIN_URL = '/accounts/login/'
 ROOT_URLCONF = 'core.urls'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = "/"
+
+YOOKASSA_SHOP_ID = os.getenv('YOOKASSA_SHOP_ID')
+YOOKASSA_SECRET_KEY = os.getenv('YOOKASSA_SECRET_KEY')
+YOOKASSA_RETURN_URL = os.getenv('YOOKASSA_RETURN_URL')
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

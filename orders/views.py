@@ -1,10 +1,16 @@
+import uuid
+
+from django.conf import settings
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from cart.utils import get_cart_items, get_cart_total
 from .forms import OrderForm
 from .integrations import send_order_to_bot
 from .models import Order, OrderItem
-from cart.models import CartItem, Cart
+from yookassa import Configuration, Payment
+
+Configuration.account_id = settings.YOOKASSA_SHOP_ID
+Configuration.secret_key = settings.YOOKASSA_SECRET_KEY
 
 @login_required
 def create_order(request):
@@ -17,7 +23,7 @@ def create_order(request):
     if request.method == 'POST':
         form = OrderForm(request.POST)
         if form.is_valid():
-
+            payment_method = form.cleaned_data.get('payment_method')
             delivery_method = form.cleaned_data.get('delivery_method')
             if delivery_method == 'delivery' and total < 1500:
                 form.add_error('delivery_method', 'Минимальная сумма заказа для доставки - 1500 рублей')
@@ -51,16 +57,36 @@ def create_order(request):
                     price = item.product.price,
                 )
 
-            current_cart.items.all().delete()
+            if payment_method == "card":
+                payment = Payment().create({
+                    "amount": {
+                        "value": str(total),
+                        "currency": "RUB"
+                    },
+                    "confirmation": {
+                        "type": "redirect",
+                        "return_url": settings.YOOKASSA_RETURN_URL + str(order.id) + '/'
+                    },
+                    "capture": True,
+                    "description": f"Оплата заказа #{order.id}",
+                    "metadata": {
+                        "order_id": order.id
+                    }}, str(uuid.uuid4())
+                )
 
+                order.payment_id = payment.id
+                order.save()
 
-            try:
-                print(">>> Создаём заказ и отправляем в бота")
-                send_order_to_bot(order)
-            except Exception as e:
-                pass
+                return redirect(payment.confirmation.confirmation_url)
+            else:
+                current_cart.items.all().delete()
+                try:
+                    print(">>> Создаём заказ и отправляем в бота")
+                    send_order_to_bot(order)
+                except Exception as e:
+                    pass
 
-            return redirect('orders:order_detail', order_id=order.id)
+                return redirect('orders:order_detail', order_id=order.id)
 
     else:
         form = OrderForm()
@@ -82,3 +108,23 @@ def order_detail(request, order_id):
 def order_list(request):
     orders = Order.objects.filter(user=request.user).order_by('-created_at')
     return render(request, 'orders/order_list.html', {'orders': orders})
+
+
+@login_required
+def payment_callback(request, order_id):
+    order = get_object_or_404(Order, id=order_id, user=request.user)
+
+    if order.payment_id:
+        payment = Payment.find_one(order.payment_id)
+        if payment.status == 'succeeded':
+            order.is_paid = True
+            order.status = 'paid'
+            order.save()
+            request.user.cart_set.first().items.all().delete()
+            try:
+                send_order_to_bot(order)
+            except Exception as e:
+                pass
+            return redirect('orders:order_detail', order_id=order.id)
+
+    return redirect('orders:order_detail', order_id=order.id)
