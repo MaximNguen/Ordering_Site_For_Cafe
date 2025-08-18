@@ -128,3 +128,12 @@ def payment_callback(request, order_id):
             return redirect('orders:order_detail', order_id=order.id)
 
     return redirect('orders:order_detail', order_id=order.id)
+
+from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse
+
+@csrf_exempt
+def yookassa_webhook(request):
+    if request.method == 'POST':
+        return HttpResponse(status=200)
+    return HttpResponse(status=400)
