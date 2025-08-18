@@ -15,6 +15,9 @@
             <p><strong>Дата создания:</strong> {{ order.created_at_samara }}</p>
             <p><strong>Способ получения:</strong> {{ order.get_delivery_method_display }}</p>
             <p><strong>Способ оплаты:</strong> {{ order.get_payment_method_display }}</p>
+            {% if  order.get_payment_method_display == "Оплата картой (Переводом)"%}
+            <p><strong>Статус оплаты:</strong> {% if  order.is_paid == True %}Оплачен {% else %} Не оплачен (Заново создайте заказ) {% endif %}</p>
+            {% endif %}
                 {% if order.pickup_location %}
                     <p><strong>Адрес заведения (Для самовызова):</strong> {{ order.pickup_location }}</p>
                 {% else %}
