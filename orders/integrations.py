@@ -21,6 +21,7 @@ def send_order_to_bot(order):
         "first_name": order.user.first_name,
         "phone": order.phone_number,
         "payment_method": order.get_payment_method_display(),
+        "is+paid": order.is_paid,
         "delivery_method": order.get_delivery_method_display(),
         "pickup_address": order.get_pickup_address_display(),
         "address": order.delivery_address,

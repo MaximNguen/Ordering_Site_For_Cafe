@@ -48,6 +48,8 @@ def order_text(data: Dict[str, Any]) -> str:
         f"📞 Номер телефона - {data.get('phone') or '—'}",
         f"💰 Способ оплаты - {data.get('payment_method')}",
     ]
+    if data.get('is_paid'):
+        lines.append(f"💰 Статус оплаты (Картой) - {data.get('is_paid') or '-'}")
 
     if data.get("pickup_address"):
         lines.append("🚚 Самовывоз")
@@ -55,6 +57,8 @@ def order_text(data: Dict[str, Any]) -> str:
     else:
         lines.append(f"🚚 {data.get('delivery_method') or '—'}")
         lines.append(f"🏠 Адрес доставки - {data.get('address') or '—'}")
+
+
 
     lines.append(f"💰 Итоговая сумма - <b>{data.get('total')}₽</b>")
 
