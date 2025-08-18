@@ -24,7 +24,7 @@ def send_order_to_bot(order):
         "delivery_method": order.get_delivery_method_display(),
         "pickup_address": order.get_pickup_address_display(),
         "address": order.delivery_address,
-        "total": order.total_price,
+        "total": str(order.total_price),
         "comment": order.comments or "",
         "items": items,
     }

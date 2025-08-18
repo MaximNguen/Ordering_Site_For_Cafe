@@ -125,7 +125,7 @@ def payment_callback(request, order_id):
             try:
                 send_order_to_bot(order)
             except Exception as e:
-                pass
+                print("Ошибка отправки заказа в бота:", e)
             return redirect('orders:order_detail', order_id=order.id)
 
     return redirect('orders:order_detail', order_id=order.id)
