@@ -1219,3 +1219,296 @@ body {
 .add-to-cart-btn:hover {
     background-color: #218838;
 }
+
+/* Добавьте это в конец вашего файла style.css */
+.order-details {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+.order-info {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.order-info p {
+    margin: 10px 0;
+    line-height: 1.5;
+    word-break: break-word;
+}
+
+.cart-table {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.cart-table table {
+    min-width: 600px;
+    width: 100%;
+}
+/* Мобильная адаптация */
+@media (max-width: 600px) {
+    /* Header - перестраиваем в два ряда */
+    .header-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .header-container-left,
+    .header-container-right {
+        padding: 0;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .header-container-left {
+        margin-bottom: 10px;
+    }
+
+    .logo-link-header {
+        margin-right: 0;
+    }
+
+    .header-phone {
+        margin-left: auto;
+    }
+
+    /* Кнопки входа и корзины в одну строку */
+    .header-container-right {
+        gap: 10px;
+    }
+
+    .button-header-login,
+    .button-header-cart {
+        width: 48%;
+        margin: 0;
+    }
+
+    /* Навигационные кнопки (меню, акции и т.д.) */
+    .all-buttons {
+        padding-left: 0;
+        overflow-x: auto;
+        white-space: nowrap;
+        display: flex;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .button-menu,
+    .button-orders,
+    .button-promotions,
+    .button-vacancy,
+    .button-index {
+        padding: 5px 8px;
+        font-size: 14px;
+        flex-shrink: 0;
+    }
+
+    /* Основной контент */
+    .main-section {
+        width: 95%;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+    }
+
+    /* Адаптация таблиц */
+    .cart-table {
+        width: 100%;
+        overflow-x: auto;
+        display: block;
+    }
+
+    .cart-table table {
+        min-width: 600px;
+    }
+
+    /* Карточки меню */
+    .menu-cards-row {
+        justify-content: center;
+    }
+
+    .menu-card {
+        width: 150px;
+        height: 150px;
+    }
+
+    /* Карточки акций */
+    .promotion-card {
+        width: 100%;
+        height: 180px;
+    }
+
+    /* Формы */
+    input, textarea, select {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Кнопки действий в корзине */
+    .cart-actions {
+        flex-direction: column;
+        gap: 10px;
+        margin-right: 10%;
+    }
+
+    .continue-shopping,
+    .clear-cart,
+    .checkout {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Детали продукта */
+    .product-detail-flex {
+        flex-direction: column;
+    }
+
+    .product-detail-image {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Вакансии и акции */
+    .vacancy-cards-row,
+    .promo-cards-row {
+        grid-template-columns: 1fr;
+    }
+
+    /* Футер */
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+    }
+}
+
+/* Дополнительные мелкие исправления для очень маленьких экранов */
+@media (max-width: 400px) {
+    .button-menu,
+    .button-orders,
+    .button-promotions,
+    .button-vacancy,
+    .button-index {
+        font-size: 12px;
+        padding: 5px 6px;
+    }
+
+    .menu-card {
+        width: 130px;
+        height: 130px;
+    }
+
+    .promotion-card {
+        height: 160px;
+    }
+
+    .promotion-card-title {
+        font-size: 18px;
+    }
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Убираем горизонтальный скролл */
+    margin: 0;
+    padding: 0;
+}
+
+/* Исправление таблиц */
+.cart-table {
+    width: 100%;
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+.cart-table table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+}
+
+/* Уменьшаем таблицы для мобильных устройств */
+@media (max-width: 480px) {
+    .cart-table th,
+    .cart-table td {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    .cart-table input[type="number"] {
+        width: 20px;
+        padding: 5px;
+    }
+
+    .cart-table button {
+        padding: 5px 8px;
+        font-size: 12px;
+    }
+}
+
+/* Стили для кнопок в таблице */
+.cart-table button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.cart-table button:hover {
+    background-color: #c82333;
+}
+
+/* Стили для input количества */
+.cart-table input[type="number"] {
+    width: 70px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Убираем скролл на кнопках */
+.all-buttons {
+    -ms-overflow-style: none;  /* IE и Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.all-buttons::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari, Opera */
+}
+
+/* Исправление пустого пространства справа */
+.main-section {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+    .cart-table table {
+        font-size: 12px;
+    }
+
+    .cart-table th,
+    .cart-table td {
+        padding: 6px;
+    }
+
+    /* Уменьшаем кнопки в хедере */
+    .button-header-login,
+    .button-header-cart {
+        padding: 10px;
+        width: auto;
+        font-size: 14px;
+    }
+}

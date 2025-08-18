@@ -11,7 +11,7 @@
 
     <section class="cart-table">
         {% if orders %}
-        <table>
+        <table class="table-cart-fix">
             <thead>
                 <tr>
                     <th>Номер заказа</th>
@@ -25,7 +25,7 @@
                 {% for order in orders %}
                 <tr>
                     <td>#{{ order.id }}</td>
-                    <td>{{ order.created_at|date:"d.m.Y H:i" }}</td>
+                    <td>{{ order.created_at_samara }}</td>
                     <td>{{ order.get_status_display }}</td>
                     <td>{{ order.total_price }}₽</td>
                     <td><a href="{% url 'orders:order_detail' order.id %}">Подробнее</a></td>

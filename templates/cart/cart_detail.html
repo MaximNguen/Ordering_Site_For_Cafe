@@ -9,9 +9,9 @@
         </div>
     </section>
 
-    <section class="cart-items">
+    <section class="cart-table">
         {% if cart_items %}
-        <div class="cart-table">
+        <div class="table-cart-fix">
             <table>
                 <thead>
                     <tr>
@@ -52,18 +52,20 @@
                 </tfoot>
             </table>
         </div>
-        <div class="cart-actions">
+    {% endif %}
+    </section>
+    {% if cart_items %}
+    <div class="cart-actions">
             <a href="{% url 'products:menuPage' %}" class="continue-shopping">Продолжить покупки</a>
             <a href="{% url 'cart:cart_clear' %}" class="clear-cart">Очистить корзину</a>
             <a href="{% url 'orders:create_order' %}" class="checkout">Оформить заказ</a>
         </div>
-        {% else %}
-        <div class="empty-cart">
+    {% else %}
+    <div class="empty-cart">
             <p>Ваша корзина пуста</p>
             <a href="{% url 'products:menuPage' %}" class="continue-shopping">Перейти в меню</a>
         </div>
-        {% endif %}
-    </section>
+    {% endif %}
 </main>
 {% endblock %}
     <script>
