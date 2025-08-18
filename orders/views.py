@@ -70,7 +70,8 @@ def create_order(request):
                     "capture": True,
                     "description": f"Оплата заказа #{order.id}",
                     "metadata": {
-                        "order_id": order.id
+                        "order_id": order.id,
+                        "cms_name": "django"
                     }}, str(uuid.uuid4())
                 )
 
