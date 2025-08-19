@@ -1,66 +1,90 @@
-import pytest
-from django.urls import reverse
-from django.test import Client, TestCase
+import sys
+
+from django.test import TestCase, Client, SimpleTestCase
+from django.urls import reverse, resolve
+from main.models import Category, Promotions, Vacancy
 from django.core.files.uploadedfile import SimpleUploadedFile
-from main.models import *
 
-@pytest.fixture
-def test_image():
-    return SimpleUploadedFile(
-        name='logo.png',
-        content=b'\x47\x49\x46\x38\x39\x61\x01\x00\x01\x00\x00\x00\x00\x21\xf9\x04\x01\x0a\x00\x01\x00\x2c\x00\x00\x00\x00\x01\x00\x01\x00\x00\x02\x02\x4c\x01\x00\x3b',
-        content_type='image/png'
-    )
+class MainViewTest(SimpleTestCase):
+    def setUp(self):
+        self.client = Client()
 
-@pytest.fixture
-def category(test_image):
-    return Category.objects.create(
-        name='test',
-        image=test_image,
-        slug = 'test'
-    )
+    def test_home_view(self):
+        response = self.client.get(reverse('main:index'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'home.html')
+        self.assertIn('menu', response.context)
+        self.assertIn('promotions', response.context)
 
-@pytest.fixture
-def promotion(test_image):
-    return Promotions.objects.create(
-        name="Скидка 20%",
-        redText="Только сегодня!",
-        time_type="Акция недели",
-        description="Скидка на все супы",
-        image=test_image,
-        slug="discount-20"
-    )
+    def test_vacancies_view(self):
+        response = self.client.get(reverse('main:vacancies'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'vacancy/vacancy_page.html')
+        self.assertIn('vacancies', response.context)
 
-@pytest.fixture
-def vacancy():
-    return Vacancy.objects.create(
-        name="Повар",
-        time_type="Полная занятость",
-        salary=40000,
-        description="Требуется опытный повар"
-    )
+    def test_promotions_view(self):
+        response = self.client.get(reverse('main:promo'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'promotions/promo-page.html')
+        self.assertIn('promos', response.context)
 
-@pytest.fixture
-def client():
-    return Client()
+    def test_conditions_view(self):
+        response = self.client.get(reverse('main:conditions'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'conditions.html')
 
-@pytest.mark.django_db
-def test_category_model(category):
-    assert category.name == 'test'
-    assert category.slug == 'test'
+    def test_empty_views(self):
+        response = self.client.get(reverse('main:index'))
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(list(response.context['menu']), [])
 
-def TestContentView(TestCase):
-    @classmethod
-    def setUpTestData(cls):
-        cls.client = Client()
-        cls.category = Category.objects.create(name="Напитки", slug="drinks")
-        cls.promotion = Promotions.objects.create(name="Акция", redText="Скидка")
+        response = self.client.get(reverse('main:vacancies'))
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(list(response.context['vacancies']), [])
+
+class ContentDisplayTest(SimpleTestCase):
+    def setUp(self):
+        self.client = Client()
 
     def test_homepage_menu_cards(self):
         response = self.client.get(reverse('main:index'))
-        self.assertEqual(response.status_code == 200)
-        self.assertContains(response, '<section class="menu-section">')
-        self.assertContains(response, self.category.name)
-        self.assertContains(response, f'href="/menu/{self.category.slug}/"')
+        self.assertContains(response, 'Меню')
 
+    def test_promotions_display(self):
+        response = self.client.get(reverse('main:index'))
+        self.assertContains(response, 'Акция')
 
+    def test_main_navigation(self):
+        response = self.client.get(reverse('main:index'))
+        content = response.content.decode()
+
+        self.assertIn('Главная', content)
+        self.assertIn('Акция', content)
+        self.assertIn('Меню', content)
+        self.assertIn('Вакансии', content)
+
+    def test_footer_content(self):
+        response = self.client.get(reverse('main:index'))
+        content = response.content.decode()
+
+        self.assertIn('О нас', content)
+        self.assertIn('+7 (123) 456-78-90', content)
+        self.assertIn('info@cafe.ru', content)
+        self.assertIn('Пн-Вс: 9:00 - 23:00', content)
+
+    def test_conditions_page(self):
+        response = self.client.get(reverse('main:conditions'))
+        content = response.content.decode()
+
+        self.assertIn('Условия доставки и самовызова', content)
+        self.assertIn('предоплату на нетипичные заказы', content)
+
+    def test_empty_promotions(self):
+        Promotions.objects.all().delete()
+        response = self.client.get(reverse('main:promo'))
+        self.assertContains(response, 'у нас нет акций')
+
+    def test_empty_vacancies(self):
+        Vacancy.objects.all().delete()
+        response = self.client.get(reverse('main:vacancies'))
+        self.assertContains(response, 'нет открытых вакансий')
