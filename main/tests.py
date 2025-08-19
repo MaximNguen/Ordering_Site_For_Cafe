@@ -1,6 +1,6 @@
 import pytest
 from django.urls import reverse
-from django.test import Client
+from django.test import Client, TestCase
 from django.core.files.uploadedfile import SimpleUploadedFile
 from main.models import *
 
@@ -43,5 +43,24 @@ def vacancy():
 @pytest.fixture
 def client():
     return Client()
+
+@pytest.mark.django_db
+def test_category_model(category):
+    assert category.name == 'test'
+    assert category.slug == 'test'
+
+def TestContentView(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        cls.client = Client()
+        cls.category = Category.objects.create(name="Напитки", slug="drinks")
+        cls.promotion = Promotions.objects.create(name="Акция", redText="Скидка")
+
+    def test_homepage_menu_cards(self):
+        response = self.client.get(reverse('main:index'))
+        self.assertEqual(response.status_code == 200)
+        self.assertContains(response, '<section class="menu-section">')
+        self.assertContains(response, self.category.name)
+        self.assertContains(response, f'href="/menu/{self.category.slug}/"')
 
 
