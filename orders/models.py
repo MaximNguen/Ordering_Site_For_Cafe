@@ -1,5 +1,7 @@
 from django.db import models
 from django.conf import settings
+from django.utils import timezone
+import pytz
 from cart.models import Cart
 from delivery.models import Location
 from products.models import Dish
@@ -7,6 +9,7 @@ from products.models import Dish
 class Order(models.Model):
     STATUS_CHOICES = (
     ('new', 'Новый'),
+    ('paid', 'Оплачен'),
     ('confirmed', 'Подтвержденный'),
     ('in_progress', 'В обработке'),
     ('ready', 'Готов к выдаче'),
@@ -15,8 +18,8 @@ class Order(models.Model):
     )
 
     PAYMENT_METHOD_CHOICES = (
-        ('card', 'Оплата картой'),
-        ('afterpay', 'Оплата при получении'),
+        ('card', 'Оплата картой (Переводом)'),
+        ('afterpay', 'Оплата наличными'),
     )
 
     DELIVERY_METHOD_CHOICES = (
@@ -43,6 +46,9 @@ class Order(models.Model):
     phone_number = models.CharField(max_length=20, verbose_name='Номер телефона')
     comments = models.TextField(blank=True, null=True, verbose_name='Комментарии и время')
 
+    payment_id = models.CharField(max_length=100, blank=True, null=True)
+    is_paid = models.BooleanField(default=False, verbose_name="Оплачено")
+
     def __str__(self):
         return f"Order #{self.id} - {self.user.email}"
 
@@ -50,6 +56,16 @@ class Order(models.Model):
         if self.pickup_location:
             return self.pickup_location.address
         return ""
+
+    def get_samara_time(self, dt):
+        tz = pytz.timezone('Europe/Samara')
+        return dt.astimezone(tz)
+
+    def created_at_samara(self):
+        return self.get_samara_time(self.created_at).strftime('%d.%m.%Y %H:%M')
+
+    def updated_at_samara(self):
+        return self.get_samara_time(self.updated_at).strftime('%d.%m.%Y %H:%M')
 
 
 class OrderItem(models.Model):
@@ -63,3 +79,5 @@ class OrderItem(models.Model):
 
     def total_price(self):
         return self.price * self.quantity
+
+

@@ -23,6 +23,7 @@
         <form method="post" class="order-form" id="order-form">
             {% csrf_token %}
             {{ form.as_p }}
+            <p>Информируем вас, что при выборе доставки, <br>к заказу будет добавлена 150₽ за услугу доставки</p>
             <button type="submit" class="submit-order" id="submit-button">Подтвердить заказ</button>
         </form>
     </section>
@@ -32,51 +33,45 @@ document.addEventListener('DOMContentLoaded', function () {
     const deliveryMethod = document.getElementById('id_delivery_method');
     const addressInput = document.getElementById('id_delivery_address');
     const pickupSelect = document.getElementById('id_pickup_location');
-    const orderForm = document.getElementById('order-form');
-    const submitButton = document.getElementById('submit-button');
+    const hiddenAddress = document.querySelector('[name="hidden_delivery_address"]');
 
     if (!deliveryMethod || !addressInput || !pickupSelect) return;
 
-    const addressWrapper = addressInput.closest('p') || addressInput.parentElement;
-    const pickupWrapper = pickupSelect.closest('p') || pickupSelect.parentElement;
+    const addressWrapper = addressInput.closest('p');
+    const pickupWrapper = pickupSelect.closest('p');
 
-    function syncAddressFromPickup() {
-        const option = pickupSelect.options[pickupSelect.selectedIndex];
-        if (option) {
-            addressInput.value = option.text;
-        }
-    }
-
-    function updateVisibility() {
+    function updateFormFields() {
         const isPickup = deliveryMethod.value === 'pickup';
+
         if (isPickup) {
+            // Скрываем поле адреса доставки, показываем выбор точки самовывоза
             if (addressWrapper) addressWrapper.style.display = 'none';
-            if (pickupWrapper) pickupWrapper.style.display = '';
-            addressInput.removeAttribute('required');
-            if (pickupSelect.value) syncAddressFromPickup();
+            if (pickupWrapper) pickupWrapper.style.display = 'block';
+
+            // Устанавливаем адрес из выбранной точки в скрытое поле
+            if (pickupSelect.value) {
+                const selectedOption = pickupSelect.options[pickupSelect.selectedIndex];
+                hiddenAddress.value = selectedOption.text;
+            }
         } else {
-            if (addressWrapper) addressWrapper.style.display = '';
+            // Показываем поле адреса доставки, скрываем выбор точки самовывоза
+            if (addressWrapper) addressWrapper.style.display = 'block';
             if (pickupWrapper) pickupWrapper.style.display = 'none';
-            addressInput.setAttribute('required', 'required');
         }
     }
 
-    function updateButtonBehavior() {
-        const isDelivery = deliveryMethod.value === 'delivery';
-        if (isDelivery) {
-            submitButton.textContent = 'Оплатить заказ';
-            orderForm.setAttribute('data-payment-required', 'true');
-        } else {
-            submitButton.textContent = 'Подтвердить заказ';
-            orderForm.removeAttribute('data-payment-required');
-        }
-    }
+    // Инициализация при загрузке
+    updateFormFields();
 
-    deliveryMethod.addEventListener('change', updateVisibility);
-    deliveryMethod.addEventListener('change', updateButtonBehavior);
-    pickupSelect.addEventListener('change', syncAddressFromPickup);
-    updateVisibility();
-    updateButtonBehavior();
+    // Обработчики событий
+    deliveryMethod.addEventListener('change', updateFormFields);
+    pickupSelect.addEventListener('change', function() {
+        if (deliveryMethod.value === 'pickup' && pickupSelect.value) {
+            const selectedOption = pickupSelect.options[pickupSelect.selectedIndex];
+            hiddenAddress.value = selectedOption.text;
+        }
+    });
 });
+</script>
 </script>
 {% endblock %}

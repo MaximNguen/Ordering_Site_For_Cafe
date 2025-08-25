@@ -28,7 +28,7 @@ class LoginForm(AuthenticationForm):
     remember_me = forms.BooleanField(required=False)
 
 class UpdateUserForm(forms.ModelForm):
-    username = forms.CharField(max_length=100,
+    first_name = forms.CharField(max_length=100,
                                required=True,
                                widget=forms.TextInput())
     email = forms.EmailField(required=True,
@@ -36,7 +36,7 @@ class UpdateUserForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ['username', 'email']
+        fields = ['first_name', 'email']
 
 
 class UpdateProfileForm(forms.ModelForm):

@@ -4,18 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62989973-3412-4e6d-9493-2c11a1ba9ed5" name="Changes" comment="Add change status when pay by card">
-      <change afterPath="$PROJECT_DIR$/orders/api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/integrations.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="62989973-3412-4e6d-9493-2c11a1ba9ed5" name="Changes" comment="added sometests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/orders/order_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/orders/order_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/tests.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +38,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev_orders" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -75,27 +67,75 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev__add__bot__status__checker&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/python/Projects/Ordering_Site_For_Cafe/media&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.intellij.platform.ide.impl.presentationAssistant.PresentationAssistantConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python tests.Python tests for tests.test_image.executor": "Run",
+    "Python tests.Python tests for tests.test_models.test_category_creation.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.models.executor": "Run",
+    "Python.views.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "dev__tests",
+    "last_opened_file_path": "D:/python/Projects/Ordering_Site_For_Cafe/media",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.intellij.platform.ide.impl.presentationAssistant.PresentationAssistantConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\python\Projects\Ordering_Site_For_Cafe\media" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\python\Projects\Ordering_Site_For_Cafe" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python tests.Python tests for tests.test_image">
+    <configuration name="Python tests for tests.test_image" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Ordering_Site_For_Cafe" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.test_image&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for tests.test_models.test_category_creation" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Ordering_Site_For_Cafe" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.test_models.test_category_creation&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Python tests for tests.test_image" />
+        <item itemvalue="Python tests.Python tests for tests.test_models.test_category_creation" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -130,6 +170,14 @@
       <workItem from="1755002986537" duration="5795000" />
       <workItem from="1755070447860" duration="12415000" />
       <workItem from="1755277618081" duration="4152000" />
+      <workItem from="1755286211665" duration="9000" />
+      <workItem from="1755286274968" duration="461000" />
+      <workItem from="1755336452296" duration="8581000" />
+      <workItem from="1755354990327" duration="1656000" />
+      <workItem from="1755358312701" duration="2814000" />
+      <workItem from="1755362098856" duration="2000" />
+      <workItem from="1755362141803" duration="219000" />
+      <workItem from="1755418415752" duration="10117000" />
     </task>
     <task id="LOCAL-00001" summary="Add menu and categories">
       <option name="closed" value="true" />
@@ -203,7 +251,151 @@
       <option name="project" value="LOCAL" />
       <updated>1755254122655</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add bot for orders by using API and webhook">
+      <option name="closed" value="true" />
+      <created>1755285305200</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1755285305200</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Add bot">
+      <option name="closed" value="true" />
+      <created>1755286525065</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1755286525065</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Add reqs">
+      <option name="closed" value="true" />
+      <created>1755286596047</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1755286596047</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Fixed button for payment">
+      <option name="closed" value="true" />
+      <created>1755340204178</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1755340204178</updated>
+    </task>
+    <task id="LOCAL-00014" summary="upgrade message on bot and add in models first name for form taking out to see in profile">
+      <option name="closed" value="true" />
+      <created>1755354127913</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1755354127913</updated>
+    </task>
+    <task id="LOCAL-00015" summary="ixed fields in form for order :/">
+      <option name="closed" value="true" />
+      <created>1755355957242</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1755355957242</updated>
+    </task>
+    <task id="LOCAL-00016" summary="ixed fields in form for order :/">
+      <option name="closed" value="true" />
+      <created>1755356660842</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1755356660842</updated>
+    </task>
+    <task id="LOCAL-00017" summary="add conditions and fixed time">
+      <option name="closed" value="true" />
+      <created>1755361702787</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1755361702787</updated>
+    </task>
+    <task id="LOCAL-00018" summary="add conditions and price for delivery">
+      <option name="closed" value="true" />
+      <created>1755425847481</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1755425847481</updated>
+    </task>
+    <task id="LOCAL-00019" summary="add yookassa in settings">
+      <option name="closed" value="true" />
+      <created>1755444181375</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1755444181375</updated>
+    </task>
+    <task id="LOCAL-00020" summary="add views">
+      <option name="closed" value="true" />
+      <created>1755445257816</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1755445257816</updated>
+    </task>
+    <task id="LOCAL-00021" summary="add url">
+      <option name="closed" value="true" />
+      <created>1755445277455</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1755445277455</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Added payment but have no account in yookassa bruh">
+      <option name="closed" value="true" />
+      <created>1755445823620</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1755445823620</updated>
+    </task>
+    <task id="LOCAL-00023" summary="add files in main app">
+      <option name="closed" value="true" />
+      <created>1755594798327</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1755594798327</updated>
+    </task>
+    <task id="LOCAL-00024" summary="get models">
+      <option name="closed" value="true" />
+      <created>1755594883184</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1755594883184</updated>
+    </task>
+    <task id="LOCAL-00025" summary="delete tests">
+      <option name="closed" value="true" />
+      <created>1755596570410</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1755596570410</updated>
+    </task>
+    <task id="LOCAL-00026" summary="setup tests">
+      <option name="closed" value="true" />
+      <created>1755599493086</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1755599493086</updated>
+    </task>
+    <task id="LOCAL-00027" summary="added sometests">
+      <option name="closed" value="true" />
+      <created>1755600073349</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1755600073349</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,7 +413,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add menu and categories" />
     <MESSAGE value="Add vacancy and promotions..." />
     <MESSAGE value="Add detail for every dish" />
     <MESSAGE value="Add linebrakes" />
@@ -230,7 +421,24 @@
     <MESSAGE value="made cart adding" />
     <MESSAGE value="Remove button update in cart" />
     <MESSAGE value="Add change status when pay by card" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add change status when pay by card" />
+    <MESSAGE value="Add bot for orders by using API and webhook" />
+    <MESSAGE value="Add bot" />
+    <MESSAGE value="Add reqs" />
+    <MESSAGE value="Fixed button for payment" />
+    <MESSAGE value="upgrade message on bot and add in models first name for form taking out to see in profile" />
+    <MESSAGE value="ixed fields in form for order :/" />
+    <MESSAGE value="add conditions and fixed time" />
+    <MESSAGE value="add conditions and price for delivery" />
+    <MESSAGE value="add yookassa in settings" />
+    <MESSAGE value="add views" />
+    <MESSAGE value="add url" />
+    <MESSAGE value="Added payment but have no account in yookassa bruh" />
+    <MESSAGE value="add files in main app" />
+    <MESSAGE value="get models" />
+    <MESSAGE value="delete tests" />
+    <MESSAGE value="setup tests" />
+    <MESSAGE value="added sometests" />
+    <option name="LAST_COMMIT_MESSAGE" value="added sometests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -240,12 +448,13 @@
           <line>5</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/orders/views.py</url>
-          <line>52</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Ordering_Site_For_Cafe$.coverage" NAME=" Coverage Results" MODIFIED="1755611128122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
+    <SUITE FILE_PATH="coverage/Ordering_Site_For_Cafe$main.coverage" NAME="main Coverage Results" MODIFIED="1755286428723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Ordering_Site_For_Cafe$views.coverage" NAME="views Coverage Results" MODIFIED="1755360594949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
+    <SUITE FILE_PATH="coverage/Ordering_Site_For_Cafe$models.coverage" NAME="models Coverage Results" MODIFIED="1755358360793" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/orders" />
   </component>
 </project>

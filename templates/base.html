@@ -2,8 +2,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'style.css' %}">
-    <title>{% block title %} {% endblock %}</title>
+    <title>{% block title %} Hanoi 73{% endblock %}</title>
+    <link rel="icon" href="{% static 'logo.png' %}" type="image/x-icon">
 </head>
 <body>
     <header>
@@ -50,6 +52,7 @@
                 <a href="{% url 'orders:order_list' %}" class="button-orders" >Мои заказы</a>
                 {% endif %}
                 <a href="{% url 'main:vacancies' %}" class="button-vacancy">Вакансии</a>
+                <a href="{% url 'main:conditions' %}" class="button-vacancy">Условия</a>
             </div>
         </div>
     </nav>
