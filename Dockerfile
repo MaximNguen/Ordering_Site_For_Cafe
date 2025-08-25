@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y \
     libpq-dev \
     && rm -rf /var/lib/apt/lists/*
 
-WORKDIP /app
+WORKDIR /app
 
 COPY requirements.txt .
 
@@ -15,7 +15,7 @@ COPY . .
 
 RUN python manage.py collectstatic --noinput
 
-RUN useradd -m appuser %% chown -R appuser:appuser /app
+RUN useradd -m appuser && chown -R appuser:appuser /app
 USER appuser
 
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "core.wsgi:application"]

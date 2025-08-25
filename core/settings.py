@@ -61,7 +61,7 @@ MIDDLEWARE = [
 
 BOT_SERVICE_URL = os.getenv("BOT_SERVICE_URL", "http://127.0.0.1:8081")
 BOT_SHARED_SECRET = os.getenv("BOT_SHARED_SECRET")
-TELEGRAM_ADMIN_CHAT_ID = int(os.getenv("TELEGRAM_ADMIN_CHAT_ID"))
+TELEGRAM_ADMIN_CHAT_ID = int(os.getenv("TELEGRAM_ADMIN_CHAT_ID", "1627316505"))
 TIME_ZONE = 'Asia/Samarkand'
 USE_TZ = True
 LOGIN_URL = '/accounts/login/'
