@@ -1,0 +1,12 @@
+.dockerignore
+.git
+.gitignore
+.env
+*.pyc
+__pycache__
+staticfiles/
+media/
+.DS_Store
+Dockerfile
+docker-compose.yml
+nginx.conf
