@@ -8,12 +8,11 @@
     <li><strong>Frontend:</strong> HTML, CSS, JavaScript</li>
     <li><strong>База данных:</strong> PostgreSQL</li>
     <li><strong>Контейнеризация:</strong> Docker</li>
-    <li><strong>Тестирование:</strong> UnitTest (Встроенный от Django)</li>
+    <li><strong>Тестирование:</strong> Pytest</li>
 </ul>
 
 <h2>Планируется</h2>
 <ul>
-    <li><strong>Тестирование:</strong> Переписать на PyTest</li>
     <li><strong>Кэширование и асинхронные задачи:</strong> Сохранять личные заказы в кешах, ежедневно составлять отчеты по выручке и отправить через бота с сохранением в кеше, если вдруг сотрудник потребует повторный отчет до окончания смены</li>
 </ul>
 
