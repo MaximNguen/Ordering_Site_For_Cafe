@@ -46,3 +46,9 @@ def test_vacancy_detail_view():
     client = Client()
     response = client.get(reverse('main:vacancies'))
     assert response.status_code == 200
+
+@pytest.mark.django_db
+def test_conditions_view():
+    client = Client()
+    response = client.get(reverse('main:conditions'))
+    assert response.status_code == 200
