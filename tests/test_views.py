@@ -1,6 +1,8 @@
 import pytest
 from django.test import Client
 from django.urls import reverse
+
+from main.models import Vacancy
 from products.models import Category, Dish
 
 @pytest.mark.django_db
@@ -38,3 +40,39 @@ def test_create_order_view_unauthenticated():
     client = Client()
     response = client.get(reverse('orders:create_order'))
     assert response.status_code == 302
+
+@pytest.mark.django_db
+def test_vacancy_detail_view():
+    client = Client()
+    response = client.get(reverse('main:vacancies'))
+    assert response.status_code == 200
+
+@pytest.mark.django_db
+def test_conditions_view():
+    client = Client()
+    response = client.get(reverse('main:conditions'))
+    assert response.status_code == 200
+
+@pytest.mark.django_db
+def test_promotion_view():
+    client = Client()
+    response = client.get(reverse('main:promo'))
+    assert response.status_code == 200
+
+@pytest.mark.django_db
+def test_order_list_view():
+    client = Client()
+    response = client.get(reverse('orders:order_list'))
+    assert response.status_code == 302
+
+@pytest.mark.django_db
+def test_signup_view():
+    client = Client()
+    response = client.get(reverse('accounts:signup'))
+    assert response.status_code == 200
+
+@pytest.mark.django_db
+def test_login_view():
+    client = Client()
+    response = client.get(reverse('accounts:login'))
+    assert response.status_code == 200
