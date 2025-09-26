@@ -13,6 +13,7 @@ import sys
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,11 +27,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-(s_yhvm0!w^^!q9o6sfxf)=8-1cy3r=y$_^q$fo^()*(00pc6^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
-ALLOWED_HOSTS = []
-
-
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 # Application definition
 
 INSTALLED_APPS = [
@@ -59,7 +60,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-BOT_SERVICE_URL = os.getenv("BOT_SERVICE_URL", "http://127.0.0.1:8081")
+
+BOT_SERVICE_URL = "http://localhost/bot"
 BOT_SHARED_SECRET = os.getenv("BOT_SHARED_SECRET")
 TELEGRAM_ADMIN_CHAT_ID = int(os.getenv("TELEGRAM_ADMIN_CHAT_ID", "1627316505"))
 TIME_ZONE = 'Asia/Samarkand'
