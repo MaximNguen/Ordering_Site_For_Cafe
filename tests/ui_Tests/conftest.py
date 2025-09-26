@@ -14,6 +14,7 @@ def open_page(request):
     param = request.param
     if param == "main":
         driver.get("http://127.0.0.1:8000/")
+    elif param == "promo":
     return driver
 
 
