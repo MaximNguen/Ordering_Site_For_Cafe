@@ -20,7 +20,6 @@ def cart_add(request, product_id):
     redirect_to = request.POST.get('next') or request.META.get('HTTP_REFERER')
 
     if mode == 'set':
-        # Update quantity to the exact value provided
         from .utils import get_or_create_cart
         cart = get_or_create_cart(request)
         if cart is None:
@@ -32,7 +31,6 @@ def cart_add(request, product_id):
         else:
             cart_item.delete()
     else:
-        # Default behavior: increment
         add_to_cart(request, product.id, quantity)
     return redirect(redirect_to or 'cart:cart_detail')
 
