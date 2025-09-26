@@ -10,7 +10,7 @@
     <li><strong>Контейнеризация:</strong> Docker</li>
     <li><strong>Тестирование:</strong> Pytest</li>
     <li><strong>Асинхронные задачи: </strong>Celery</li>
-    <li><strong>Деплой: </strong>strong>Nginx, WSGI</li>
+    <li><strong>Деплой: </strong>Nginx, WSGI</li>
 </ul>
 
 <h2>Планируется</h2>
