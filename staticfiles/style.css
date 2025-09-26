@@ -1,0 +1,1514 @@
+body {
+    font-family: "Raleways fallback", verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+.header2{
+    display: flex;
+    box-sizing: border-box;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-bottom: 1px solid #e9e9e9;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.header-container {
+    display: flex;
+    box-sizing: border-box;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-bottom: 1px solid #e9e9e9;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.button-menu-and-title{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+.header-container-left {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 10%;
+}
+
+.header-container-right {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-right: 10%;
+    
+}
+.category-back-button{
+    padding: 15px;
+    border-radius: 24px;
+    border: none;
+    width: 100px;
+
+    background: #f8f8f8;
+    color: #222;
+    font-size: 16px;
+    margin: 0 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-align: center;
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: center;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    text-decoration: none;
+}
+.category-back-button:hover{
+    background: #e0e0e0;
+}
+.button-header-login{
+    padding: 15px;
+    border-radius: 24px;
+    border: none;
+    width: 100px;
+
+    background: #f8f8f8;
+    color: #222;
+    font-size: 16px;
+    margin: 0 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-align: center;
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: center;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    text-decoration: none;
+    /* Optional: add hover effect */
+    /* Note: &:hover is not valid in CSS files, use .button-header:hover instead */
+}
+.button-header-cart{
+    padding: 15px;
+    border-radius: 24px;
+    border: none;
+    width: 100px;
+
+    background: #b41f1f;
+    color: #222;
+    font-size: 16px;
+    margin: 0 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-align: center;
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: center;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    text-decoration: none;
+}
+.button-header-login:hover {
+    background: #e0e0e0;
+}
+
+.button-header-cart:hover {
+    background: #9a1a1a;;
+}
+
+
+.logo-link-header {
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: center;
+    min-width: 48px;
+    max-width: 48px;
+    min-height: 48px;
+    max-height: 48px;
+    background-image: url('/static/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -9999px;
+    overflow: hidden;
+    vertical-align: middle;
+    margin-right: 50px;
+
+}
+.phone-link{
+    text-decoration: none;
+    color: #222;
+}
+
+.all-buttons {
+    display: flex;
+    gap: 0; /* убираем промежутки между кнопками */
+    border-top: none;
+    border: 1px solid #e9e9e9;
+    padding-left: 10%;
+    background: #fff;
+}
+
+.button-menu,
+.button-orders,
+.button-promotions,
+.button-vacancy,
+.button-index {
+    border-top: none;
+    margin: 0;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: black;
+    border: none; /* убираем индивидуальные границы */
+    border-right: 1px solid #e9e9e9; /* добавляем только правую границу */
+    display: inline-block;
+    background: #fff;
+}
+
+/* Специальные стили для кнопок */
+.button-promotions,
+.button-index {
+    border-left: 1px solid #e9e9e9;
+}
+.button-orders:hover,
+.button-menu:hover,
+.button-vacancy:hover,
+.button-index:hover{
+    background-color: rgba(203, 202, 202, 0.15); /* добавляет затемнение при наведении */
+    transition: background-color 0.2s;
+
+}
+.button-promotions{
+    background-color: #b41f1f;
+    color: #fff;
+    border-left: 1px solid #e9e9e9;
+}
+.button-promotions:hover{
+    background-color: #9a1a1a; /* добавляет затемнение при наведении */
+    transition: background-color 0.2s;
+}
+.main-section{
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .main-section {
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-section {
+        margin-left: 2%;
+        margin-right: 2%;
+        width: 96%;
+    }
+}
+.video-presentation-section {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.video-presentation-section video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.logo-on-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 12px;
+}
+
+.logo-on-video img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+}
+.menu-section{
+    margin: 20px 0px 20px 40px;;
+    width: 100%;
+    align-self: stretch;
+    box-sizing: border-box;
+}
+.promotions-section{
+    margin: 30px 0px 20px 40px;
+    align-self: flex-start;
+}
+
+.menu-cards-row {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.menu-card {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    background: #fff;
+    cursor: pointer;
+    transition: box-shadow 0.2s, transform 0.2s;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.menu-card:hover {
+    box-shadow: 0 4px 24px rgba(0,0,0,0.16);
+    transform: translateY(-4px) scale(1.03);
+}
+
+.menu-card-image {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+    z-index: 1;
+}
+
+.menu-card-title {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 24px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    text-align: center;
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+    .menu-cards-row {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Стили для карточек акций */
+.promotions-cards-row {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.promotion-card {
+    position: relative;
+    width: 400px;
+    height: 250px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    background: #fff;
+    cursor: pointer;
+    transition: box-shadow 0.2s, transform 0.2s;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.promotion-card:hover {
+    box-shadow: 0 4px 24px rgba(0,0,0,0.16);
+    transform: translateY(-4px) scale(1.03);
+}
+
+.promotion-card-image {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+    z-index: 1;
+}
+
+.promotion-card-title {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 24px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    text-align: center;
+    width: 100%;
+}
+
+.promotion-card-description {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(180, 31, 31, 0.9);
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 12px;
+    z-index: 2;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+@media (max-width: 900px) {
+    .promotions-cards-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .promotion-card {
+        width: 100%;
+        max-width: 400px;
+        height: 200px;
+    }
+    
+    .promotion-card-title {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+    
+    .promotion-card-description {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .promotions-cards-row {
+        gap: 16px;
+        padding: 0 10px;
+    }
+    
+    .promotion-card {
+        width: 100%;
+        max-width: 350px;
+        height: 180px;
+        border-radius: 16px;
+    }
+    
+    .promotion-card-title {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+    
+    .promotion-card-description {
+        font-size: 11px;
+        padding: 4px 10px;
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .promotions-cards-row {
+        gap: 12px;
+        padding: 0 5px;
+    }
+    
+    .promotion-card {
+        width: 100%;
+        max-width: 300px;
+        height: 160px;
+        border-radius: 12px;
+    }
+    
+    .promotion-card-title {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+    
+    .promotion-card-description {
+        font-size: 10px;
+        padding: 3px 8px;
+        border-radius: 6px;
+    }
+}
+
+/* Стили для Footer */
+.footer {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 40px 0 20px 0;
+    margin-top: 60px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #b41f1f;
+    border-bottom: 2px solid #b41f1f;
+    padding-bottom: 8px;
+}
+
+.footer-text {
+    line-height: 1.6;
+    color: #ccc;
+    margin: 0;
+}
+
+.footer-contact p {
+    margin: 8px 0;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-icon {
+    font-style: normal;
+    font-size: 16px;
+}
+
+.footer-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-menu li {
+    margin: 8px 0;
+}
+
+.footer-link {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-link:hover {
+    color: #b41f1f;
+}
+
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-link {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.social-link:hover {
+    color: #b41f1f;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    color: #888;
+}
+
+/* Адаптивность для footer */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0 15px;
+    }
+    
+    .footer {
+        padding: 30px 0 15px 0;
+        margin-top: 40px;
+    }
+    
+    .footer-title {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+}
+
+/* Стили для страницы категории */
+.category-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.category-title {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.category-title p {
+    margin: 0;
+}
+
+.category-back-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.back-to-menu-btn {
+    margin-right: 60px;
+    margin-left: auto;
+    padding: 8px 16px;
+    background: #eee;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: background 0.2s;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}
+.back-to-menu-btn:hover {
+    background: #e0e0e0;
+}
+.category-menu-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+.menu-title-indent {
+    padding-left: 24px;
+}
+
+/* Стили для карты */
+.map_place {
+    margin-top: 40px;
+    width: 100%;
+}
+
+.map_place h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Адаптивность для карты */
+@media (max-width: 768px) {
+    .map_place h3 {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+    
+    .map_place div {
+        height: 300px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .map_place h3 {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+    
+    .map_place div {
+        height: 250px !important;
+    }
+}
+.map-place{
+    width: 100%;
+}
+
+/* Стили для страницы вакансий */
+.vacancy-section{
+    margin: 20px 0px 20px 40px;
+    align-self: flex-start;
+}
+
+.vacancy-cards-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 24px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.promo-cards-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 24px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.vacancy-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.promo-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.vacancy-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.promo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.vacancy-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    gap: 16px;
+}
+
+.promo-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    gap: 16px;
+}
+
+.vacancy-card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    flex: 1;
+}
+
+.promo-card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    flex: 1;
+}
+
+.vacancy-card-salary {
+    background: #b41f1f;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.promo-card-badge {
+    background: #b41f1f;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.vacancy-card-body {
+    margin-bottom: 20px;
+}
+
+.promo-card-body {
+    margin-bottom: 20px;
+}
+
+.vacancy-card-type {
+    margin-bottom: 12px;
+}
+
+.promo-card-date {
+    margin-bottom: 12px;
+}
+
+.vacancy-type-badge {
+    background: #f8f8f8;
+    color: #666;
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #e0e0e0;
+}
+
+.promo-date-badge {
+    background: #f8f8f8;
+    color: #666;
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #e0e0e0;
+}
+
+.vacancy-card-description {
+    display: block;
+    color: #666;
+    line-height: 1.6;
+    font-size: 15px;
+}
+.vacancy-card-description p {
+    margin: 0 0 8px 0;
+}
+
+.promo-card-description {
+    color: #666;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.promo-card-description p {
+    margin: 0;
+}
+
+.vacancy-card-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.promo-card-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.vacancy-apply-btn {
+    background: #b41f1f;
+    color: #fff;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 24px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(180, 31, 31, 0.3);
+}
+
+.promo-card-btn {
+    background: #b41f1f;
+    color: #fff;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 24px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(180, 31, 31, 0.3);
+}
+
+.vacancy-apply-btn:hover {
+    background: #9a1a1a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(180, 31, 31, 0.4);
+}
+
+.promo-card-btn:hover {
+    background: #9a1a1a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(180, 31, 31, 0.4);
+}
+
+.no-vacancies {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+    grid-column: 1 / -1;
+}
+
+.no-promotions {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+    grid-column: 1 / -1;
+}
+
+.no-vacancies p {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+.no-vacancies p:first-child {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.no-promotions p {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+.no-promotions p:first-child {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Адаптивность для вакансий */
+@media (max-width: 768px) {
+    .vacancy-cards-row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 0 10px;
+    }
+    
+    .vacancy-card {
+        padding: 20px;
+        border-radius: 12px;
+    }
+    
+    .vacancy-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    .vacancy-card-title {
+        font-size: 18px;
+    }
+    
+    .vacancy-card-salary {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+    
+    .vacancy-apply-btn {
+        width: 100%;
+        padding: 14px 24px;
+    }
+}
+
+/* Адаптивность для акций */
+@media (max-width: 768px) {
+    .promo-cards-row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 0 10px;
+    }
+    
+    .promo-card {
+        padding: 20px;
+        border-radius: 12px;
+    }
+    
+    .promo-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    .promo-card-title {
+        font-size: 18px;
+    }
+    
+    .promo-card-badge {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+    
+    .promo-card-btn {
+        width: 100%;
+        padding: 14px 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .vacancy-card {
+        padding: 16px;
+    }
+    
+    .vacancy-card-title {
+        font-size: 16px;
+    }
+    
+    .vacancy-card-description {
+        font-size: 14px;
+    }
+    
+    .no-vacancies {
+        padding: 40px 15px;
+    }
+    
+    .promo-card {
+        padding: 16px;
+    }
+    
+    .promo-card-title {
+        font-size: 16px;
+    }
+    
+    .promo-card-description {
+        font-size: 14px;
+    }
+    
+    .no-promotions {
+        padding: 40px 15px;
+    }
+}
+
+.product-detail-section {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 32px 24px 24px 24px;
+    box-sizing: border-box;
+}
+.product-detail-flex {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.product-detail-image {
+    flex: 0 0 320px;
+    max-width: 320px;
+    min-width: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.product-detail-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.product-detail-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 16px;
+}
+.product-detail-info h2 {
+    margin: 0 0 8px 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.product-detail-price {
+    font-size: 1.5rem;
+    color: #b41f1f;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+.add-to-cart-btn {
+    padding: 12px 32px;
+    background: #b41f1f;
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(180, 31, 31, 0.15);
+}
+.add-to-cart-btn:hover {
+    background: #9a1a1a;
+}
+.product-detail-description {
+    margin-top: 32px;
+    padding-top: 16px;
+    border-top: 1px solid #eee;
+}
+.product-detail-description h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+.product-detail-description p {
+    margin: 0;
+    color: #444;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+@media (max-width: 900px) {
+    .product-detail-flex {
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+    }
+    .product-detail-image {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+
+/* cart.css */
+.cart-table {
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.cart-table table {
+    border-collapse: collapse;
+    width: auto;
+}
+
+.cart-table th, .cart-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-table th {
+    background-color: #f8f9fa;
+}
+
+.cart-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.continue-shopping, .clear-cart, .checkout {
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.continue-shopping {
+    background-color: #6c757d;
+    color: white;
+    margin: 5px;
+}
+
+.clear-cart {
+    background-color: #dc3545;
+    color: white;
+    margin: 5px;
+}
+.buttons-profile-header {
+    margin: 20px;
+}
+.my-orders-button{
+    background-color: #6c757d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.submit-order{
+    background-color: #28a745;
+    color: white;
+    margin: 5px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.submit-profile{
+    background-color: #28a745;
+    color: white;
+    margin: 5px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.cancel-profile{
+    background-color: #dc3545;
+    color: white;
+    margin: 5px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.nav-link{
+    background-color: #dc3545;
+    color: white;
+    margin: 5px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.checkout {
+    background-color: #28a745;
+    color: white;
+    margin: 5px;
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 40px;
+}
+
+.empty-cart p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.add-to-cart-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #218838;
+}
+
+/* Добавьте это в конец вашего файла style.css */
+.order-details {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+.order-info {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.order-info p {
+    margin: 10px 0;
+    line-height: 1.5;
+    word-break: break-word;
+}
+
+.cart-table {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.cart-table table {
+    min-width: 600px;
+    width: 100%;
+}
+/* Мобильная адаптация */
+@media (max-width: 600px) {
+    /* Header - перестраиваем в два ряда */
+    .header-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .header-container-left,
+    .header-container-right {
+        padding: 0;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .header-container-left {
+        margin-bottom: 10px;
+    }
+
+    .logo-link-header {
+        margin-right: 0;
+    }
+
+    .header-phone {
+        margin-left: auto;
+    }
+
+    /* Кнопки входа и корзины в одну строку */
+    .header-container-right {
+        gap: 10px;
+    }
+
+    .button-header-login,
+    .button-header-cart {
+        width: 48%;
+        margin: 0;
+    }
+
+    /* Навигационные кнопки (меню, акции и т.д.) */
+    .all-buttons {
+        padding-left: 0;
+        overflow-x: auto;
+        white-space: nowrap;
+        display: flex;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .button-menu,
+    .button-orders,
+    .button-promotions,
+    .button-vacancy,
+    .button-index {
+        padding: 5px 8px;
+        font-size: 14px;
+        flex-shrink: 0;
+    }
+
+    /* Основной контент */
+    .main-section {
+        width: 95%;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+    }
+
+    /* Адаптация таблиц */
+    .cart-table {
+        width: 100%;
+        overflow-x: auto;
+        display: block;
+    }
+
+    .cart-table table {
+        min-width: 600px;
+    }
+
+    /* Карточки меню */
+    .menu-cards-row {
+        justify-content: center;
+    }
+
+    .menu-card {
+        width: 150px;
+        height: 150px;
+    }
+
+    /* Карточки акций */
+    .promotion-card {
+        width: 100%;
+        height: 180px;
+    }
+
+    /* Формы */
+    input, textarea, select {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Кнопки действий в корзине */
+    .cart-actions {
+        flex-direction: column;
+        gap: 10px;
+        margin-right: 10%;
+    }
+
+    .continue-shopping,
+    .clear-cart,
+    .checkout {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Детали продукта */
+    .product-detail-flex {
+        flex-direction: column;
+    }
+
+    .product-detail-image {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Вакансии и акции */
+    .vacancy-cards-row,
+    .promo-cards-row {
+        grid-template-columns: 1fr;
+    }
+
+    /* Футер */
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+    }
+}
+
+/* Дополнительные мелкие исправления для очень маленьких экранов */
+@media (max-width: 400px) {
+    .button-menu,
+    .button-orders,
+    .button-promotions,
+    .button-vacancy,
+    .button-index {
+        font-size: 12px;
+        padding: 5px 6px;
+    }
+
+    .menu-card {
+        width: 130px;
+        height: 130px;
+    }
+
+    .promotion-card {
+        height: 160px;
+    }
+
+    .promotion-card-title {
+        font-size: 18px;
+    }
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Убираем горизонтальный скролл */
+    margin: 0;
+    padding: 0;
+}
+
+/* Исправление таблиц */
+.cart-table {
+    width: 100%;
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+.cart-table table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+}
+
+/* Уменьшаем таблицы для мобильных устройств */
+@media (max-width: 480px) {
+    .cart-table th,
+    .cart-table td {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    .cart-table input[type="number"] {
+        width: 20px;
+        padding: 5px;
+    }
+
+    .cart-table button {
+        padding: 5px 8px;
+        font-size: 12px;
+    }
+}
+
+/* Стили для кнопок в таблице */
+.cart-table button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.cart-table button:hover {
+    background-color: #c82333;
+}
+
+/* Стили для input количества */
+.cart-table input[type="number"] {
+    width: 70px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Убираем скролл на кнопках */
+.all-buttons {
+    -ms-overflow-style: none;  /* IE и Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.all-buttons::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari, Opera */
+}
+
+/* Исправление пустого пространства справа */
+.main-section {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+    .cart-table table {
+        font-size: 12px;
+    }
+
+    .cart-table th,
+    .cart-table td {
+        padding: 6px;
+    }
+
+    /* Уменьшаем кнопки в хедере */
+    .button-header-login,
+    .button-header-cart {
+        padding: 10px;
+        width: auto;
+        font-size: 14px;
+    }
+}

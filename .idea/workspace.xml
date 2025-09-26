@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62989973-3412-4e6d-9493-2c11a1ba9ed5" name="Changes" comment="add fixture + 3 tests for learning">
+    <list default="true" id="62989973-3412-4e6d-9493-2c11a1ba9ed5" name="Changes" comment="add more tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +36,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev-containers" />
+        <entry key="$PROJECT_DIR$" value="deploy-set-attempt" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -77,7 +77,7 @@
     "Python.views.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "refactoring__tests",
+    "git-widget-placeholder": "add-tests-UI",
     "last_opened_file_path": "D:/python/Projects/Ordering_Site_For_Cafe/media",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -217,7 +217,7 @@
       <workItem from="1758865220570" duration="2000" />
       <workItem from="1758894636232" duration="136000" />
       <workItem from="1758894780879" duration="214000" />
-      <workItem from="1758895016499" duration="2435000" />
+      <workItem from="1758895016499" duration="11505000" />
     </task>
     <task id="LOCAL-00001" summary="Add menu and categories">
       <option name="closed" value="true" />
@@ -499,7 +499,39 @@
       <option name="project" value="LOCAL" />
       <updated>1758896823900</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="add wsgi">
+      <option name="closed" value="true" />
+      <created>1758898854292</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1758898854292</updated>
+    </task>
+    <task id="LOCAL-00037" summary="setted nginx and wsgi for site, but not for bot">
+      <option name="closed" value="true" />
+      <created>1758899867212</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1758899867212</updated>
+    </task>
+    <task id="LOCAL-00038" summary="setted nginx and wsgi for site, but not for bot">
+      <option name="closed" value="true" />
+      <created>1758907374961</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1758907374961</updated>
+    </task>
+    <task id="LOCAL-00039" summary="add more tests">
+      <option name="closed" value="true" />
+      <created>1758908307840</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1758908307840</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -517,9 +549,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add bot for orders by using API and webhook" />
-    <MESSAGE value="Add bot" />
-    <MESSAGE value="Add reqs" />
     <MESSAGE value="Fixed button for payment" />
     <MESSAGE value="upgrade message on bot and add in models first name for form taking out to see in profile" />
     <MESSAGE value="ixed fields in form for order :/" />
@@ -542,7 +571,10 @@
     <MESSAGE value="replace tests and prepare for UI tests" />
     <MESSAGE value="add fixture" />
     <MESSAGE value="add fixture + 3 tests for learning" />
-    <option name="LAST_COMMIT_MESSAGE" value="add fixture + 3 tests for learning" />
+    <MESSAGE value="add wsgi" />
+    <MESSAGE value="setted nginx and wsgi for site, but not for bot" />
+    <MESSAGE value="add more tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="add more tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
