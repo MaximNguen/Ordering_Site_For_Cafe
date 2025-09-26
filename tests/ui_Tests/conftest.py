@@ -3,7 +3,7 @@ from selenium import webdriver
 
 @pytest.fixture(scope="session")
 def alert_about_ui_tests():
-    print("Alert About UI Tests")
+    print("Alert About UI Tests --------------")
     yield
     print("Alert About UI Tests END ----------")
 
