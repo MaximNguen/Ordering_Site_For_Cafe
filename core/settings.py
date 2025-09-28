@@ -44,10 +44,10 @@ CACHES = {
         "LOCATION": "redis://127.0.0.1:6379",
     }
 }
-INTERNAL_IPS = [
+"""INTERNAL_IPS = [
     # ...
     '127.0.0.1',  # Add your development machine's IP address here
-]
+]"""
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -185,3 +185,28 @@ EMAIL_HOST_USER = os.getenv('GMAIL_USER')
 EMAIL_HOST_PASSWORD = os.getenv('GMAIL_APP_PASSWORD')
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 SERVER_EMAIL = EMAIL_HOST_USER
+
+if not DEBUG:
+    SECURE_BROWSER_XSS_FILTER = True
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    X_FRAME_OPTIONS = 'DENY'
+
+    # Логирование
+    LOGGING = {
+        'version': 1,
+        'disable_existing_loggers': False,
+        'handlers': {
+            'file': {
+                'level': 'ERROR',
+                'class': 'logging.FileHandler',
+                'filename': os.path.join(BASE_DIR, 'django_errors.log'),
+            },
+        },
+        'loggers': {
+            'django': {
+                'handlers': ['file'],
+                'level': 'ERROR',
+                'propagate': True,
+            },
+        },
+    }
