@@ -1,11 +1,14 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Category, Dish
+from django.views.decorators.cache import cache_page
 
+@cache_page(60*15)
 def menuPage(request):
     menuItems = Category.objects.all()
 
     return render(request, 'menu/menu.html', {'menu': menuItems})
 
+@cache_page(60*15)
 def category_detail(request, slug):
     category = get_object_or_404(Category, slug=slug)
     dishes = category.dishes.all()  
@@ -17,6 +20,7 @@ def category_detail(request, slug):
     
     return render(request, 'products/category.html', data)
 
+@cache_page(60*15)
 def product_detail(request, category_slug, product_slug):
     category = get_object_or_404(Category, slug=category_slug)
     product = get_object_or_404(Dish, slug=product_slug)
