@@ -27,13 +27,27 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-(s_yhvm0!w^^!q9o6sfxf)=8-1cy3r=y$_^q$fo^()*(00pc6^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 # Application definition
 
+CACHES = {
+    # "default" is the alias.
+    "default": {
+        # Here, we're using the Redis cache backend.
+        "BACKEND": "django.core.cache.backends.redis.RedisCache",
+
+        # A LOCATION parameter to specify the Redis server's address and port.
+        "LOCATION": "redis://127.0.0.1:6379",
+    }
+}
+INTERNAL_IPS = [
+    # ...
+    '127.0.0.1',  # Add your development machine's IP address here
+]
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -48,6 +62,9 @@ INSTALLED_APPS = [
     'main',
     'products',
     'cart',
+
+    'debug_toolbar',
+    'django_redis'
 ]
 
 MIDDLEWARE = [
@@ -55,9 +72,11 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
 
