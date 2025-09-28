@@ -13,6 +13,7 @@ import sys
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,12 +28,26 @@ SECRET_KEY = 'django-insecure-(s_yhvm0!w^^!q9o6sfxf)=8-1cy3r=y$_^q$fo^()*(00pc6^
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
-ALLOWED_HOSTS = []
-
-
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 # Application definition
 
+CACHES = {
+    # "default" is the alias.
+    "default": {
+        # Here, we're using the Redis cache backend.
+        "BACKEND": "django.core.cache.backends.redis.RedisCache",
+
+        # A LOCATION parameter to specify the Redis server's address and port.
+        "LOCATION": "redis://127.0.0.1:6379",
+    }
+}
+"""INTERNAL_IPS = [
+    # ...
+    '127.0.0.1',  # Add your development machine's IP address here
+]"""
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -47,6 +62,9 @@ INSTALLED_APPS = [
     'main',
     'products',
     'cart',
+
+    'debug_toolbar',
+    'django_redis'
 ]
 
 MIDDLEWARE = [
@@ -54,12 +72,15 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
-BOT_SERVICE_URL = os.getenv("BOT_SERVICE_URL", "http://127.0.0.1:8081")
+
+BOT_SERVICE_URL = "http://localhost/bot"
 BOT_SHARED_SECRET = os.getenv("BOT_SHARED_SECRET")
 TELEGRAM_ADMIN_CHAT_ID = int(os.getenv("TELEGRAM_ADMIN_CHAT_ID", "1627316505"))
 TIME_ZONE = 'Asia/Samarkand'
@@ -164,3 +185,28 @@ EMAIL_HOST_USER = os.getenv('GMAIL_USER')
 EMAIL_HOST_PASSWORD = os.getenv('GMAIL_APP_PASSWORD')
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 SERVER_EMAIL = EMAIL_HOST_USER
+
+if not DEBUG:
+    SECURE_BROWSER_XSS_FILTER = True
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    X_FRAME_OPTIONS = 'DENY'
+
+    # Логирование
+    LOGGING = {
+        'version': 1,
+        'disable_existing_loggers': False,
+        'handlers': {
+            'file': {
+                'level': 'ERROR',
+                'class': 'logging.FileHandler',
+                'filename': os.path.join(BASE_DIR, 'django_errors.log'),
+            },
+        },
+        'loggers': {
+            'django': {
+                'handlers': ['file'],
+                'level': 'ERROR',
+                'propagate': True,
+            },
+        },
+    }
