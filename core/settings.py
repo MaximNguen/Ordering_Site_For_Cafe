@@ -80,7 +80,7 @@ MIDDLEWARE = [
 ]
 
 
-BOT_SERVICE_URL = "http://localhost/bot"
+BOT_SERVICE_URL = "http://localhost:8081"
 BOT_SHARED_SECRET = os.getenv("BOT_SHARED_SECRET")
 TELEGRAM_ADMIN_CHAT_ID = int(os.getenv("TELEGRAM_ADMIN_CHAT_ID", "1627316505"))
 TIME_ZONE = 'Asia/Samarkand'
