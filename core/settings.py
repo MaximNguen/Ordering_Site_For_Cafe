@@ -34,10 +34,10 @@ CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 # Application definition
 
-INTERNAL_IPS = [
+"""INTERNAL_IPS = [
     # ...
     '127.0.0.1',  # Add your development machine's IP address here
-]
+]"""
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
