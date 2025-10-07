@@ -34,16 +34,6 @@ CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 # Application definition
 
-CACHES = {
-    # "default" is the alias.
-    "default": {
-        # Here, we're using the Redis cache backend.
-        "BACKEND": "django.core.cache.backends.redis.RedisCache",
-
-        # A LOCATION parameter to specify the Redis server's address and port.
-        "LOCATION": "redis://127.0.0.1:6379",
-    }
-}
 """INTERNAL_IPS = [
     # ...
     '127.0.0.1',  # Add your development machine's IP address here
@@ -185,6 +175,16 @@ EMAIL_HOST_USER = os.getenv('GMAIL_USER')
 EMAIL_HOST_PASSWORD = os.getenv('GMAIL_APP_PASSWORD')
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 SERVER_EMAIL = EMAIL_HOST_USER
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        "LOCATION": "redis://127.0.0.1:6379",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
 
 if not DEBUG:
     SECURE_BROWSER_XSS_FILTER = True
