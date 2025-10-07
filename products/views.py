@@ -1,14 +1,19 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Category, Dish
-from django.views.decorators.cache import cache_page
+from django.core.cache import cache
 
-@cache_page(60*15)
 def menuPage(request):
-    menuItems = Category.objects.all()
+    key = "menuItems"
+    queryset = cache.get(key)
+    if queryset is not None:
+        print("GOt cache")
+        return render(request, 'menu/menu.html', {'menu': queryset})
 
+    menuItems = Category.objects.all()
+    cache.set(key, menuItems, timeout=60*15)
     return render(request, 'menu/menu.html', {'menu': menuItems})
 
-@cache_page(60*15)
+
 def category_detail(request, slug):
     category = get_object_or_404(Category, slug=slug)
     dishes = category.dishes.all()  
@@ -20,7 +25,6 @@ def category_detail(request, slug):
     
     return render(request, 'products/category.html', data)
 
-@cache_page(60*15)
 def product_detail(request, category_slug, product_slug):
     category = get_object_or_404(Category, slug=category_slug)
     product = get_object_or_404(Dish, slug=product_slug)
