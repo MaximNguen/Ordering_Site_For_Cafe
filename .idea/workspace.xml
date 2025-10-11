@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62989973-3412-4e6d-9493-2c11a1ba9ed5" name="Changes" comment="add fixture + 3 tests for learning">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="62989973-3412-4e6d-9493-2c11a1ba9ed5" name="Changes" comment="add celery">
+      <change beforePath="$PROJECT_DIR$/orders/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +36,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev-containers" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -72,12 +72,14 @@
     "Python tests.Python tests for test_main_page.test_home_title.executor": "Run",
     "Python tests.Python tests for tests.test_image.executor": "Run",
     "Python tests.Python tests for tests.test_models.test_category_creation.executor": "Run",
+    "Python tests.Python tests in test_celery.py.executor": "Run",
     "Python.main.executor": "Run",
     "Python.models.executor": "Run",
+    "Python.testing_celery.executor": "Run",
     "Python.views.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "refactoring__tests",
+    "git-widget-placeholder": "celery__24hTask",
     "last_opened_file_path": "D:/python/Projects/Ordering_Site_For_Cafe/media",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -97,7 +99,7 @@
       <recent name="D:\python\Projects\Ordering_Site_For_Cafe" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for test_main_page.test_home_title">
+  <component name="RunManager">
     <configuration name="Python tests for test_main_page.test_home_title" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Ordering_Site_For_Cafe" />
       <option name="ENV_FILES" value="" />
@@ -146,13 +148,29 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests in testing_celery.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Ordering_Site_For_Cafe" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/core" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/core/testing_celery.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests in testing_celery.py" />
         <item itemvalue="Python tests.Python tests for test_main_page.test_home_title" />
         <item itemvalue="Python tests.Python tests for tests.test_image" />
         <item itemvalue="Python tests.Python tests for tests.backend_tests.test_models" />
         <item itemvalue="Python tests.Python tests for tests.test_image" />
-        <item itemvalue="Python tests.Python tests for tests.backend_tests.test_models" />
       </list>
     </recent_temporary>
   </component>
@@ -218,6 +236,16 @@
       <workItem from="1758894636232" duration="136000" />
       <workItem from="1758894780879" duration="214000" />
       <workItem from="1758895016499" duration="2435000" />
+      <workItem from="1759089549330" duration="2000" />
+      <workItem from="1759320840583" duration="1217000" />
+      <workItem from="1759348393268" duration="1886000" />
+      <workItem from="1759416285857" duration="34000" />
+      <workItem from="1759768313196" duration="158000" />
+      <workItem from="1759778010068" duration="19000" />
+      <workItem from="1759824227882" duration="3650000" />
+      <workItem from="1760005883830" duration="39000" />
+      <workItem from="1760162975786" duration="20000" />
+      <workItem from="1760173476115" duration="4400000" />
     </task>
     <task id="LOCAL-00001" summary="Add menu and categories">
       <option name="closed" value="true" />
@@ -499,7 +527,39 @@
       <option name="project" value="LOCAL" />
       <updated>1758896823900</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="some fix for nginx">
+      <option name="closed" value="true" />
+      <created>1759349803220</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1759349803220</updated>
+    </task>
+    <task id="LOCAL-00037" summary="add redis server to save caches, add 1 manual added cache to show knowlenge">
+      <option name="closed" value="true" />
+      <created>1759831903424</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1759831903424</updated>
+    </task>
+    <task id="LOCAL-00038" summary="remove debugger">
+      <option name="closed" value="true" />
+      <created>1759832107723</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1759832107723</updated>
+    </task>
+    <task id="LOCAL-00039" summary="add celery">
+      <option name="closed" value="true" />
+      <created>1760190002749</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1760190002749</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -517,10 +577,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add bot for orders by using API and webhook" />
-    <MESSAGE value="Add bot" />
-    <MESSAGE value="Add reqs" />
-    <MESSAGE value="Fixed button for payment" />
     <MESSAGE value="upgrade message on bot and add in models first name for form taking out to see in profile" />
     <MESSAGE value="ixed fields in form for order :/" />
     <MESSAGE value="add conditions and fixed time" />
@@ -542,7 +598,11 @@
     <MESSAGE value="replace tests and prepare for UI tests" />
     <MESSAGE value="add fixture" />
     <MESSAGE value="add fixture + 3 tests for learning" />
-    <option name="LAST_COMMIT_MESSAGE" value="add fixture + 3 tests for learning" />
+    <MESSAGE value="some fix for nginx" />
+    <MESSAGE value="add redis server to save caches, add 1 manual added cache to show knowlenge" />
+    <MESSAGE value="remove debugger" />
+    <MESSAGE value="add celery" />
+    <option name="LAST_COMMIT_MESSAGE" value="add celery" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -565,7 +625,8 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Ordering_Site_For_Cafe$.coverage" NAME=" Coverage Results" MODIFIED="1758895086315" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/ui_Tests" />
+    <SUITE FILE_PATH="coverage/Ordering_Site_For_Cafe$.coverage" NAME=" Coverage Results" MODIFIED="1760185972053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
+    <SUITE FILE_PATH="coverage/Ordering_Site_For_Cafe$testing_celery.coverage" NAME="testing_celery Coverage Results" MODIFIED="1760186174334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
     <SUITE FILE_PATH="coverage/Ordering_Site_For_Cafe$main.coverage" NAME="main Coverage Results" MODIFIED="1755286428723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Ordering_Site_For_Cafe$views.coverage" NAME="views Coverage Results" MODIFIED="1755360594949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
     <SUITE FILE_PATH="coverage/Ordering_Site_For_Cafe$models.coverage" NAME="models Coverage Results" MODIFIED="1755358360793" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/orders" />

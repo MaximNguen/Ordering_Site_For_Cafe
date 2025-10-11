@@ -210,3 +210,18 @@ if not DEBUG:
             },
         },
     }
+
+CELERY_BROKER_URL = "redis://127.0.0.1:6379/0"
+CELERY_RESULT_BACKEND = "redis://127.0.0.1:6379/0"
+CELERY_TIMEZONE = TIME_ZONE
+
+CELERY_WORKER_POOL = 'solo'  # Используем solo pool вместо prefork для Windows
+CELERY_WORKER_CONCURRENCY = 1  # Один процесс для Windows
+CELERY_TASK_ALWAYS_EAGER = False
+
+CELERY_BEAT_SCHEDULE = {
+    'send-daily-sales-report': {
+        'task': 'orders.tasks.send_daily_sales_report',
+        'schedule': 86400.0,  # 24 часа в секундах
+    },
+}
