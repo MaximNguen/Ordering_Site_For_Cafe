@@ -2,6 +2,7 @@ import os
 import asyncio
 import logging
 from typing import Dict, Any
+from datetime import datetime, timedelta
 
 import requests
 from aiohttp import web
@@ -142,6 +143,20 @@ async def on_cancel(callback: types.CallbackQuery):
 async def fallback(msg: types.Message):
     await msg.answer("Я служебный бот. Заказы присылает сайт автоматически.")
 
+
+@dp.message(F.text == "/report")
+async def send_manual_report(message: types.Message):
+    """Ручная отправка отчета по продажам"""
+    if message.from_user.id != ADMIN_CHAT_ID:
+        await message.answer("У вас нет прав для этой команды")
+        return
+
+    from orders.tasks import send_daily_sales_report
+    try:
+        result = send_daily_sales_report.delay()
+        await message.answer("Отчет запущен...")
+    except Exception as e:
+        await message.answer(f"Ошибка: {e}")
 
 async def start_http_server():
     app = web.Application()
