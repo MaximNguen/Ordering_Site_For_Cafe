@@ -8,20 +8,21 @@
     <li><strong>Frontend:</strong> HTML, CSS, JavaScript</li>
     <li><strong>База данных:</strong> PostgreSQL, Redis</li>
     <li><strong>Контейнеризация:</strong> Docker</li>
-    <li><strong>Тестирование:</strong> Pytest</li>
+    <li><strong>Тестирование:</strong> Pytest, Postman, Selenium</li>
+    <li><strong>Брокер сообщений:</strong> Redis</li>
     <li><strong>Асинхронные задачи: </strong>Celery</li>
     <li><strong>Деплой: </strong>Nginx, WSGI</li>
 </ul>
 
 <h2>Планируется</h2>
 <ul>
-    <li><strong>Асинхронные задачи:</strong> Ежедневно составлять отчеты по выручке и отправить через бота с сохранением в кеше, если вдруг сотрудник потребует повторный отчет до окончания смены</li>
+    <li><strong>Деплой:</strong> Контенеризовать проект, чтобы все микросервисы работы сглаженно на сервере</li>
     <li>Настроить Nginx и WSGI для будущего деплоя на продакшен</li>
 </ul>
 
 <h2>Что реализовано?</h2>
 <ul>
-    <li><strong>Backend на Django</strong>: Проект реализован с использованием модульной архитектуры <strong>Django</strong> для создания масштабируемого и поддерживаемого кода.</li>
+    <li><strong>Backend на Django</strong>: Спроектированная микросервисзная архитектура состоящая из 5 микросервисов - <strong>Backend со статическими файлами Frontend, База данных на основе СУБД PostgreSQL, Redis как брокер сообщений и кеширование, Celery для асинхронной задачи, Бот работающий на локальной сети со своим портом с помощью Aiohttp для endpoints</strong></li>
     <li><strong>База данных</strong>: Интегрирована и настроена производительная СУБД <strong>PostgreSQL</strong> для надежного хранения данных.</li>
     <li><strong>Интеграция с Telegram-ботом</strong>: Реализовано двустороннее взаимодействие между сайтом и ботом через <strong>REST API Endpoints</strong> для автоматического обновления статусов заказов в реальном времени.</li>
     <li><strong>Платежная система</strong>: Подключено и настроено стороннее платежное <strong>API (ЮKassa)</strong> для безопасного приема онлайн-платежей.</li>
