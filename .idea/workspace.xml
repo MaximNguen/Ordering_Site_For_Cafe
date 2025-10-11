@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62989973-3412-4e6d-9493-2c11a1ba9ed5" name="Changes" comment="remove debugger">
-      <change afterPath="$PROJECT_DIR$/core/celery.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/testing_celery.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders/tasks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    <list default="true" id="62989973-3412-4e6d-9493-2c11a1ba9ed5" name="Changes" comment="add celery">
+      <change beforePath="$PROJECT_DIR$/orders/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -252,7 +245,7 @@
       <workItem from="1759824227882" duration="3650000" />
       <workItem from="1760005883830" duration="39000" />
       <workItem from="1760162975786" duration="20000" />
-      <workItem from="1760173476115" duration="4334000" />
+      <workItem from="1760173476115" duration="4400000" />
     </task>
     <task id="LOCAL-00001" summary="Add menu and categories">
       <option name="closed" value="true" />
@@ -558,7 +551,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759832107723</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="add celery">
+      <option name="closed" value="true" />
+      <created>1760190002749</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1760190002749</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -576,7 +577,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed button for payment" />
     <MESSAGE value="upgrade message on bot and add in models first name for form taking out to see in profile" />
     <MESSAGE value="ixed fields in form for order :/" />
     <MESSAGE value="add conditions and fixed time" />
@@ -601,7 +601,8 @@
     <MESSAGE value="some fix for nginx" />
     <MESSAGE value="add redis server to save caches, add 1 manual added cache to show knowlenge" />
     <MESSAGE value="remove debugger" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove debugger" />
+    <MESSAGE value="add celery" />
+    <option name="LAST_COMMIT_MESSAGE" value="add celery" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
